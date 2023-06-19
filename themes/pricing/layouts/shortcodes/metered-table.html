@@ -1,0 +1,85 @@
+<table class="table table-responsive">
+  <thead>
+    <tr>
+      <th scope="col">{{ i18n "total-credits" .}}</th>
+      <th scope="col">{{ i18n "rate-credit" . }}</th>
+      <th scope="col">{{ i18n "price-month" . }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0 {{ i18n "to" . }} 8000</td>
+      <td><strong>{{ i18n "flat-rate" . }}</strong></td>
+      <td><strong>$1999</strong> {{ i18n "fixed" . }} </td>
+    </tr>
+    <tr>
+      <td>{{ i18n "next" .}} 80000</td>
+      <td><strong>$0.02</strong>/Credit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>{{ i18n "next" .}} 160000</td>
+      <td><strong>$0.01</strong>/Credit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>{{ i18n "next" .}} 800000</td>
+      <td><strong>$0.005</strong>/Credit</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>{{ i18n "any-additional" . }}</td>
+      <td><strong>$0.002</strong>/Credit</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<form id="price-form">
+         <div class="row">
+                <div class="col-md-6 col-12 mb-md-0 mb-3">
+                    <input type="number" class="form-control" id="credits" name="credits" min="0" step="1" placeholder="{{ i18n `processed-credits` . }}" required>
+                </div>
+                <div class="col-md-6 col-12">
+                    <button type="submit" class="btn btn-primary" style="color: white">{{ i18n "calculate" . }}</button>
+                </div>
+            </div>
+    </form>
+     <p class="mt-4">{{ i18n "total-price" . }}: <span id="price-display">0</span> USD</p>
+
+    <script>
+        document.getElementById('price-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const basePrice = 1999;
+            const credits = parseInt(document.getElementById('credits').value);
+            let totalPrice = basePrice;
+
+            if (credits <= 8000) {
+                totalPrice += 0;
+            } else {
+                let remainingCredits = credits - 8000;
+
+                const tier1Credits = Math.min(remainingCredits, 80000);
+                totalPrice += tier1Credits * 0.02;
+                remainingCredits -= tier1Credits;
+
+                if (remainingCredits > 0) {
+                    const tier2Credits = Math.min(remainingCredits, 160000);
+                    totalPrice += tier2Credits * 0.01;
+                    remainingCredits -= tier2Credits;
+                }
+
+                if (remainingCredits > 0) {
+                    const tier3Credits = Math.min(remainingCredits, 800000);
+                    totalPrice += tier3Credits * 0.005;
+                    remainingCredits -= tier3Credits;
+                }
+
+                if (remainingCredits > 0) {
+                    totalPrice += remainingCredits * 0.002;
+                }
+            }
+
+            document.getElementById('price-display').textContent = totalPrice.toFixed(2);
+        });
+    </script>

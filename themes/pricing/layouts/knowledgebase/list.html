@@ -1,0 +1,15 @@
+{{ define "main" }}
+<div class="container kb-container">
+  {{- range where .Site.RegularPages "Type" "knowledgebase" -}}
+  <div
+    class="card border-primary mb-3 article-card"
+    onclick="window.location='{{ .RelPermalink }}';"
+  >
+    <div class="card-body text-primary">
+      <h5 class="card-title" style="color: black">{{ .Params.Name }}</h5>
+      <p class="card-text" id="card-text">{{ .Params.description }}</p>
+    </div>
+  </div>
+  {{ end }}
+</div>
+{{ end }}

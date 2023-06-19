@@ -1,0 +1,41 @@
+{{ with resources.GetRemote
+"https://purchase-api.dynabic.com/v1.2/productFamily/site-groupdocs?isArchived=&pageNumber=&pageSize=&applyDisplayOrder=true&includeProducts=false&enabledPPPOn=&clientkey=a&signature=jc_xWmdMtA-nMA2Bgp9vuEV0Kn0" }} {{ with .Err }} {{ warnf "%s" . }} {{ else }} {{ with
+.Content }} {{ with transform.Unmarshal . }}
+
+{{ range . }}
+<h4>{{ .Name }}</h4>
+{{ $url := print "https://purchase-api.dynabic.com/v1.2/productFamily/site-groupdocs/name-" "" .Name }}
+{{ with resources.GetRemote $url }}
+
+{{ with .Err }} {{ warnf "%s" . }} {{ else }} {{ with
+.Content }} {{ with transform.Unmarshal . }}
+
+{{ range .Products }}
+{{ if eq .isArchived false }}
+{{ $productName := .Name }}
+{{ $productName = replace $productName "." "-" }}
+{{ if strings.Contains $productName "+" }}
+{{ $productName = replace $productName "+" "p" }}
+{{ end }}
+{{ $product := dict "Id" .Id "Name" .Name "Description" .Description "weight" .DisplayOrder "FamilyId" .FamilyId "LargeImg" .LargeLogoImageSrc | jsonify (dict "prefix" " " "indent" "  ") }}
+
+{{/* 1. */}}{{ $string := $product }}
+    {{/* 2. */}} {{ $filename := printf "product/%s.md" (urlize $productName) }} 
+
+    {{/* 3. */}} {{ $resource := resources.FromString $filename $string }} 
+
+    {{/* 4. */}} {{ $file := $resource.RelPermalink }}
+
+{{ end }}
+{{ end }}
+{{ end }}
+{{ end }}
+{{ end }}
+{{ end }}
+{{ end }}
+
+{{ end }}
+{{ end }}
+{{ end }}
+{{ end }}
+

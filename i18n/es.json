@@ -1,0 +1,252 @@
+[
+  {
+    "desc-GroupDocs.Total Product Family": {
+      "other": "Manipula documentos desde tus propias soluciones de escritorio y aplicaciones web sin necesidad de ningún otro producto comercial."
+    },
+    "desc-GroupDocs.Viewer Product Family": {
+      "other": "Solución flexible de visualización de documentos para programadores y profesionales para renderizar y mostrar formatos de archivo ampliamente utilizados en cualquier lugar."
+    },
+    "desc-GroupDocs.Conversion Product Family": {
+      "other": "Convierte formatos populares de documentos e imágenes en cualquier plataforma con soluciones basadas en aplicaciones y API."
+    },
+    "desc-GroupDocs.Editor Product Family": {
+      "other": "Editor de documentos para manipular formatos de archivo de Microsoft Office, OpenOffice, PDF, HTML y otros documentos."
+    },
+    "desc-Groupdocs.Merger Product Family": {
+      "other": "Combina fácilmente varios documentos o divide documentos de Microsoft Office, OpenOffice, PDF y otros en páginas."
+    },
+    "desc-GroupDocs.Comparison Product Family": {
+      "other": "Compara el contenido y los estilos de documentos en diferentes plataformas con nuestras API y soluciones basadas en aplicaciones en las instalaciones y en la nube."
+    },
+    "desc-GroupDocs.Annotation Product Family": {
+      "other": "Anota documentos con nuestras aplicaciones o crea tus propias aplicaciones de anotación personalizadas en diferentes plataformas utilizando nuestras API en las instalaciones o en la nube."
+    },
+    "desc-GroupDocs.Assembly Product Family": {
+      "other": "Genera automáticamente informes en diferentes formatos a partir de plantillas personalizadas y diferentes fuentes de datos con nuestras aplicaciones y API multiplataforma."
+    },
+    "desc-GroupDocs.Parser Product Family": {
+      "other": "Extrae texto, imágenes, metadatos y detección de codificación para formatos de archivo de Microsoft Office, OpenOffice, PDF, HTML y otros formatos de archivo de tu elección."
+    },
+    "desc-GroupDocs.Signature Product Family": {
+      "other": "Firma documentos digitales e imágenes en cualquier plataforma utilizando nuestras API flexibles y soluciones basadas en aplicaciones para programadores y usuarios finales."
+    },
+    "desc-GroupDocs.Metadata Product Family": {
+      "other": "API y aplicaciones para leer, editar, reemplazar y eliminar metadatos de documentos, imágenes y otros formatos de archivo en plataformas populares."
+    },
+    "desc-GroupDocs.Search Product Family": {
+      "other": "Realiza búsqueda de texto e indexación en documentos de Microsoft Office, OpenOffice, PDF y muchos otros formatos de archivo de documentos."
+    },
+    "desc-GroupDocs.Watermark Product Family": {
+      "other": "Aplica y manipula rápidamente marcas de agua de texto e imagen en tus documentos e imágenes con una búsqueda inteligente."
+    },
+    "desc-Groupdocs.Redaction Product Family": {
+      "other": "Oculta o elimina información privada de documentos de Microsoft Office, hojas de cálculo, presentaciones, PDF e imágenes."
+    },
+    "desc-GroupDocs.Classification Product Family": {
+      "other": "Clasifica documentos y texto de forma programática en categorías precisas utilizando IAB (versión 2) y taxonomías de documentos en cualquier tipo de aplicaciones .NET."
+    },
+    "only-supported": {
+      "other": "Este producto actualmente solo es compatible con la plataforma .NET y, por lo tanto, no hay paquetes familiares disponibles."
+    },
+    "from": {
+      "other": "desde"
+    },
+    "per": {
+      "other": "por plataforma, por año"
+    },
+    "choose-platform": {
+      "other": "Elige una plataforma"
+    },
+    "or": {
+      "other": "o"
+    },
+    "getall": {
+      "other": "Obtén todas las plataformas en un paquete familiar a partir de"
+    },
+    "select": {
+      "other": "Seleccionar paquete familiar"
+    },
+    "family": {
+      "other": "Familia"
+    },
+    "pricing-info": {
+      "other": "Información de precios"
+    },
+    "pricing": {
+      "other": "Precios"
+    },
+    "home-description": {
+      "other": "Mejora tus aplicaciones web, móviles o de escritorio con la capacidad de mostrar, anotar, convertir, firmar electrónicamente, comparar y ensamblar documentos."
+    },
+    "estimate": {
+      "other": "Puedes estimar los costos mensuales utilizando nuestro"
+    },
+    "simulator": {
+      "other": "simulador"
+    },
+    "with-free-support": {
+      "other": "con soporte gratuito"
+    },
+    "with-paid-support": {
+      "other": "con soporte pago"
+    },
+    "select-only": {
+      "other": "Seleccionar"
+    },
+    "per-developer-per-month": {
+      "other": "por desarrollador, por mes"
+    },
+    "with-paid-consulting": {
+      "other": "con consultoría paga"
+    },
+    "month": {
+      "other": "mes"
+    },
+    "year": {
+      "other": "año"
+    },
+    "developers-licensed": {
+      "other": "Desarrolladores con licencia"
+    },
+    "derived-work": {
+      "other": "Utilizado en trabajos derivados en ubicaciones"
+    },
+    "enterprise-deployment": {
+      "other": "Implementación empresarial"
+    },
+    "unlimited-servers": {
+      "other": "Implementación en servidores ilimitados"
+    },
+    "use-with-web-sites": {
+      "other": "Para uso con sitios web/aplicaciones"
+    },
+    "external-distribution": {
+      "other": "Permite distribución externa"
+    },
+    "royalty-free": {
+      "other": "Libre de regalías"
+    },
+    "use-in-a": {
+      "other": "Uso en una biblioteca de desarrollo, API o SDK"
+    },
+    "license-type": {
+      "other": "Tipo de licencia"
+    },
+    "perpetual": {
+      "other": "Perpetua"
+    },
+    "updates-and-hotfixes": {
+      "other": "Actualizaciones y parches de un año"
+    },
+    "can-be-used": {
+      "other": "Se puede utilizar para crear aplicaciones ilimitadas"
+    },
+    "discount-applied": {
+      "other": "Descuento aplicado a compras múltiples"
+    },
+    "technical-support": {
+      "other": "Soporte técnico gratuito"
+    },
+    "note": {
+      "other": "Nota: todos los precios están en"
+    },
+    "help-me-choose": {
+      "other": "Ayúdame a elegir el tipo de licencia correcto"
+    },
+    "pay-per-use": {
+      "other": "Pagar por uso"
+    },
+    "yearly": {
+      "other": "Anual"
+    },
+    "expl1": {
+      "other": "Desarrollador: un desarrollador puede ser un desarrollador de software, un administrador de sistemas, un autor de informes o cualquier otra persona que use el producto. Cada desarrollador que trabaje con los productos de Aspose necesita tener una licencia."
+    },
+    "expl2": {
+      "other": "Ubicación: una ubicación es el lugar físico donde se utiliza un trabajo derivado; cada dirección distintiva o edificio de oficinas, dentro o fuera de una organización. Trabajo derivado: un programa de software, un sitio, un generador de informes o cualquier otra solución, trabajo o producto que incorpore o utilice los productos de Aspose."
+    },
+    "expl3": {
+      "other": "Permite la distribución de trabajos derivados en un número ilimitado de servidores físicos o virtuales en un número ilimitado de ubicaciones físicas (dirección distintiva o edificio de oficinas). Trabajo derivado: un programa de software, un sitio, un generador de informes o cualquier otra solución, trabajo o producto que incorpore o utilice los productos de Aspose."
+    },
+    "expl4": {
+      "other": "Permite el uso del producto dentro de una implementación de aplicación dentro de una empresa (compañía)"
+    },
+    "expl5": {
+      "other": "Permite la distribución de trabajos derivados en sitios web/aplicaciones de cara al público, extranets, intranets multinivel o escenarios de uso de proyectos SaaS."
+    },
+    "expl6": {
+      "other": "Permite la distribución de trabajos derivados a terceros (por ejemplo, incrustados en software vendido a otros)."
+    },
+    "expl7": {
+      "other": "Utiliza la licencia sin necesidad de pagar regalías o tarifas de licencia por cada uso, por cada copia o volumen vendido."
+    },
+    "expl8": {
+      "other": "Si produces software con una API para que otros desarrolladores lo utilicen, esto se aplica a ti."
+    },
+    "expl9": {
+      "other": "Perpetuo: la licencia para usar el producto no vence. Pago por uso: paga regalías por el uso del producto cada mes."
+    },
+    "expl10": {
+      "other": "Una compra incluye una suscripción que te otorga un año de actualizaciones del producto. Cuando haya pasado el año, todavía tienes licencia para usar el producto, por lo que tus aplicaciones existentes que usen Aspose seguirán funcionando, pero para descargar y utilizar más actualizaciones del producto, primero debes renovar tu suscripción. Nota: esto no se aplica a las licencias medibles que siempre están actualizadas."
+    },
+    "expl11": {
+      "other": "No hay límites en la cantidad de aplicaciones que puedes crear con los productos de Aspose."
+    },
+    "expl12": {
+      "other": "No hay límites en la cantidad de aplicaciones que puedes crear con los productos de Aspose."
+    },
+    "expl13": {
+      "other": "Compra múltiples licencias y recibe un descuento. Las licencias medibles contienen descuentos incorporados, ya que agregar desarrolladores adicionales no aumenta los costos."
+    },
+    "expl14": {
+      "other": "Recibe soporte técnico gratuito antes de la compra o incluso si tu suscripción de mantenimiento ha vencido. Para obtener soporte prioritario, consulta las opciones de soporte pagado."
+    },
+    "expl15": {
+      "other": "Esto no se aplica a las licencias medibles que siempre están actualizadas."
+    },
+    "total-credits": {
+      "other": "Créditos totales"
+    },
+    "rate-credit": {
+      "other": "Tarifa/Crédito"
+    },
+    "price-month": {
+      "other": "Precio/Mes"
+    },
+    "to": {
+      "other": "a"
+    },
+    "flat-rate": {
+      "other": "Tarifa plana"
+    },
+    "next": {
+      "other": "Siguiente"
+    },
+    "fixed": {
+      "other": "Fijo"
+    },
+    "any-additional": {
+      "other": "Cualquier adicional"
+    },
+    "calculate": {
+      "other": "Calcular"
+    },
+    "processed-credits": {
+      "other": "Créditos procesados totales"
+    },
+    "total-price": {
+      "other": "Precio total"
+    },
+    "metered": {
+      "other": "Medido"
+    },
+    "get-temp-lic": {
+      "other": "Obtener una licencia temporal"
+    }
+  }
+]
+
+
+
+
+

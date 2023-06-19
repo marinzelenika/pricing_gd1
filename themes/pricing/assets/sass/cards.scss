@@ -1,0 +1,153 @@
+.card {
+    border: 0;
+    box-shadow: 5px 10px 15px 5px rgba(0,0,0,0.1);
+    height: 550px;
+    padding: 2.2em 1.6rem;
+    border-radius: 10px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.card:hover {
+  box-shadow: 10px 20px 30px 10px rgba(0,0,0,0.1);
+}
+.plan-title {
+    margin-bottom: 1.2em;
+    height: 50px;
+}
+.license-note{
+  margin-bottom: 15px !important;
+}
+.question-mark {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+.fam-pack-btn{
+    color: white;
+    font-size: smaller;
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    border-radius: 35px;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 3em;
+    padding: 10px 0;
+}
+.product-icon {
+    //filter: grayscale(100%);
+    margin-bottom: 15px;
+    width: 40px !important;
+    height: 40px !important;
+    opacity: 70%;
+}
+.card-text {
+    font-size: x-small;
+    height: 55px;
+    color: gray;
+}
+.dropdown-toggle {
+  background-color: $primary !important; /* Changed background color */
+  border-radius: 30px;
+  border: 2px solid #FFFFFF !important; /* Bolder and changed border color */
+  padding: 10px 20px;
+  color: #FFFFFF !important; /* Changed text color to white */
+  font-size: .8em; /* Increased font size */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Added box shadow */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Hover effect */
+.dropdown-toggle:hover {
+  background-color: $primary !important; /* Darken background color */
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.3); /* Increase box shadow */
+}
+
+.hr-or {
+  position: relative;
+  text-align: center;
+  margin-top: 0.7em;
+  margin-bottom: 0.3em;
+  color: darkgray;
+}
+.hr-or::before,
+.hr-or::after {
+  content: "";
+  position: absolute;
+  top: 56%;
+  width: 45%;
+  border-top: 1px solid darkgray;
+}
+.hr-or::before {
+  right: 55%;
+}
+.hr-or::after {
+  left: 55%;
+}
+.hr-or span {
+    position: relative;
+    z-index: 1;
+    background-color: white;
+    padding: 0 0.5em;
+    font-size: 13px;
+}
+.dropdown-menu {
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 5px 10px 15px 3px rgba(0,0,0,0.1);
+}
+.nav-item {
+  font-size: small;
+  border-radius: 18px;
+  padding: 5px;
+}
+.nav-link{
+  border-radius: 20px !important;
+}
+.wrapper {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center; /* center vertically */
+  background-color: #f5f5f5;
+  padding: 2px;
+  border-radius: 30px;
+}
+#myTab .nav-link.active, #myTab .nav-link:hover {
+  background-color: $primary;
+  color: white;
+}
+.fam-pack-btn1 {
+    color: white;
+    font-size: small;
+    width: 65%;
+    margin: 0 auto;
+    display: inline-block;
+    height: 36px;
+    line-height: 13px;
+    vertical-align: middle;
+    align-items: center;
+    border-radius: 35px;
+    margin-top: -10px;
+}
+.product-card {
+    height: 565px;
+    padding: 2rem 1rem;
+}
+.read-more{
+  background-color: transparent;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+
+
+
+
+

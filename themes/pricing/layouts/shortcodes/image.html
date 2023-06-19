@@ -1,0 +1,5 @@
+{{ if .IsNamedParams }}
+<img src="{{ .Site.BaseURL }}{{ .Get "src" }}" alt="{{ .Get "src" }}" class="img-fluid">
+{{ else }}
+<img src="{{ .Site.BaseURL }}{{ .Get 0 }}" alt="{{ .Get "src" }}" class="img-fluid">
+{{ end }}

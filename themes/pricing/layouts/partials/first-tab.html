@@ -1,0 +1,699 @@
+<div class="tab-pane fade show active" id="yearly">
+  <div class="row d-flex aligns-items-center justify-content-center">
+    {{ with resources.GetRemote
+    "https://purchase-api.dynabic.com/v1.2/productFamily/site-groupdocs?isArchived=&pageNumber=&pageSize=&applyDisplayOrder=true&includeProducts=false"
+    }} {{ with .Err }} {{ warnf "%s" . }} {{ else }} {{ with .Content }} {{ with
+    transform.Unmarshal . }} {{ range . }} {{ $url := print
+    "https://purchase-api.dynabic.com/v1.2/productFamily/site-groupdocs/name-" ""
+    .Name }} {{ with resources.GetRemote $url }} {{ with .Err }} {{ warnf "%s" .
+    }} {{ else }} {{ with .Content }} {{ with transform.Unmarshal . }} {{ range
+    .Products }} {{ $id := .Id }} {{ if eq $id $.Page.Params.Id }} {{ range
+    .PricingPlans }} {{ if not (or (strings.Contains .Name "Old Subscription") (lt .DisplayOrder 0)) }} {{
+    $name := .Name }} {{ $ppId := .Id }} {{ $lastchar := substr $name -1 }} {{
+    if eq $lastchar "1" }} {{ $onlyName := split $name "*" }}
+
+    <div class="col-xxl-3 col-lg-4 col-md-6 col-sm-12">
+      <div class="card text-center product-card">
+        <div class="card-body">
+          <h5 class="card-title"><strong>{{ index $onlyName 0 }}</strong></h5>
+          {{ if eq $.Site.LanguageCode "en" }}
+          <p style="font-size: x-small; color: grey;" class="license-note">{{ .LicenseNote }}</p>
+          {{ end }}
+          {{ range .PaymentScheduleList }}
+          <h3 style="margin-bottom: 3px">${{ .SubscriptionPeriodCharge }}</h3>
+          {{ end }}
+          <p style="font-size: small"><a href="https://forum.groupdocs.com">{{ i18n "with-free-support" . }}</a></p>
+          {{ $linkUrl := print "https://purchase.groupdocs.com/buy/cart?ppId=" ""
+          $ppId }}
+          <a class="btn btn-primary btn-lg fam-pack-btn1 add-to-cart d-flex justify-content-center align-items-center" href="{{ $linkUrl }}" target="_blank"
+            ><span>{{ i18n "select-only" . }}</span></a
+          >
+          <hr />
+          {{ range .PaymentScheduleList }} {{ $SubCharges :=
+          .SubscriptionPeriodCharge }}  
+
+            {{ with resources.GetRemote "https://purchase-api.dynabic.com/v1.2/productFamily/site-groupdocs/name-support" }} {{ with .Err }} {{ warnf "%s" .
+    }} {{ else }} {{ with .Content }} {{ with transform.Unmarshal . }} {{ range $index, $value :=
+    .Products }}
+        {{ $supportName := .Name }}
+        {{ range $i, $j := .PricingPlans }}
+ 
+        {{ $lastchar := substr $j.Name -1 }} {{
+        if eq $lastchar "1" }}
+        {{ if eq $name .Name }}
+        {{ range .PaymentScheduleList }}
+        {{ if not (eq (int .Id) 94671)}}
+        <h3 style="margin: 0;">${{ add $SubCharges .SubscriptionPeriodCharge }}</h3>
+        <p style="font-size: small;"><a href="https://helpdesk.groupdocs.com">{{ i18n "with-paid-support" . }}</a></p>
+        {{ $linkUrlwPaidSupport := print "https://purchase.groupdocs.com/buy/cart?ppId=" ""
+          $ppId "&paidSupport=true" }}
+        <a class="btn btn-primary btn-lg fam-pack-btn1 add-to-cart d-flex justify-content-center align-items-center" href="{{ $linkUrlwPaidSupport }}" target="_blank"
+            ><span>{{ i18n "select-only" . }}</span></a
+          >
+          <hr />
+        {{ end }}{{ end }}{{ end }}{{ end }}{{ end }}{{ end }}
+    {{ end }}{{ end }}{{ end }}{{ end }}
+    <h3 style="margin: 0;">${{ .SubscriptionPeriodCharge }}</h3>
+    <div class="wrapper">
+    <p style="color: green; font-size: large; margin: 0;">+$5999</p>
+    <p style="font-size: x-small; color: grey; margin: 0; margin-left: .3em">{{ i18n "per-developer-per-month" . }}</p>
+    </div>
+    <p style="font-size: small"><a href="https://consulting.groupdocs.com">{{ i18n "with-paid-consulting" . }}</a></p>
+    {{ $linkUrlwPaidConsulting := print "https://purchase.groupdocs.com/buy/cart?ppId=" ""
+          $ppId "&paidConsulting=true" }}
+        <a class="btn btn-primary btn-lg fam-pack-btn1 add-to-cart d-flex justify-content-center align-items-center" href="{{ $linkUrlwPaidConsulting }}" target="_blank"
+            ><span>{{ i18n "select-only" . }}</span></a
+          >
+    {{ end }}
+            
+        </div>
+      
+      </div>
+    </div>
+    {{ end }}{{ end }} {{ end }}{{ end }} {{ end }}{{ end }} {{ end }} {{ end
+    }}{{ end }}{{ end }} {{ end }}{{ end }}{{ end }}{{ end }}
+  </div>
+
+  <table class="comp-table">
+    <caption>Features</caption>
+    <thead class="comp-table__tableHead">
+      <tr class="comp-table__columnHeaders comp-table__tableRow">
+        <th title="Empty placeholder cell" class="comp-table__emptyCell comp-table__tableData comp-table__columnHeader"></th>
+        <th style="width: 18%;" scope="col" class=" comp-table__tableData comp-table__columnHeader">
+          <div class="comp-table__buyProduct">
+            <span class="comp-table__productName">Developer Small Business</span> 
+          </div>
+        </th>
+        <th style="width: 18%;" scope="col" class=" comp-table__tableData comp-table__columnHeader">
+          <div class="comp-table__buyProduct">
+            <span class="comp-table__productName">Developer OEM</span> 
+          </div>
+        </th>
+        <th style="width: 18%;" scope="col" class=" comp-table__tableData comp-table__columnHeader">
+          <div class="comp-table__buyProduct">
+            <span class="comp-table__productName">Site Small Business</span> 
+          </div>
+        </th>
+        <th style="width: 18%;" scope="col" class=" comp-table__tableData comp-table__columnHeader">
+          <div class="comp-table__buyProduct">
+            <span class="comp-table__productName">Site OEM</span> 
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody class="comp-table__tableBody">
+      <tr class="comp-table__columnGroup comp-table__tableRow">
+        <th scope="colgroup" class="comp-table__tableData" colspan="4">
+          <span>{{ i18n "developers-licensed" . }} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl1` . }}">
+  <span style="margin-left: .5em; color: grey">&#63;</span>
+</span></span>
+        </th>
+      </tr>
+      <tr class="comp-table__tableRow comp-table__tableBodyRow">
+        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "developers-licensed" . }} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl1` . }}">
+  <span style="margin-left: .5em; color: grey">&#63;</span>
+</span></th>
+        <td class="comp-table__tableData comp-table__tableDataCell ">1</td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">1</td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">10</td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">10</td>
+      </tr>
+      <tr class="comp-table__columnGroup comp-table__tableRow">
+        <th scope="colgroup" class="comp-table__tableData" colspan="4">
+          <span>{{ i18n "derived-work" . }} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl2` . }}">
+  <span style="margin-left: .5em; color: grey">&#63;</span>
+</span></span>
+        </th>
+      </tr>
+      <tr class="comp-table__tableRow comp-table__tableBodyRow">
+        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "derived-work" . }} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl2` . }}">
+  <span style="margin-left: .5em; color: grey">&#63;</span>
+</span></span></th>
+        <td class="comp-table__tableData comp-table__tableDataCell ">1</td>
+        <td class="comp-table__tableData comp-table__tableDataCell "><svg style="width: 20px; height:12px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 241.1C0 161 65 96 145.1 96c38.5 0 75.4 15.3 102.6 42.5L320 210.7l72.2-72.2C419.5 111.3 456.4 96 494.9 96C575 96 640 161 640 241.1v29.7C640 351 575 416 494.9 416c-38.5 0-75.4-15.3-102.6-42.5L320 301.3l-72.2 72.2C220.5 400.7 183.6 416 145.1 416C65 416 0 351 0 270.9V241.1zM274.7 256l-72.2-72.2c-15.2-15.2-35.9-23.8-57.4-23.8C100.3 160 64 196.3 64 241.1v29.7c0 44.8 36.3 81.1 81.1 81.1c21.5 0 42.2-8.5 57.4-23.8L274.7 256zm90.5 0l72.2 72.2c15.2 15.2 35.9 23.8 57.4 23.8c44.8 0 81.1-36.3 81.1-81.1V241.1c0-44.8-36.3-81.1-81.1-81.1c-21.5 0-42.2 8.5-57.4 23.8L365.3 256z"/></svg></td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">10</td>
+        <td class="comp-table__tableData comp-table__tableDataCell "><svg style="width: 20px; height:12px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 241.1C0 161 65 96 145.1 96c38.5 0 75.4 15.3 102.6 42.5L320 210.7l72.2-72.2C419.5 111.3 456.4 96 494.9 96C575 96 640 161 640 241.1v29.7C640 351 575 416 494.9 416c-38.5 0-75.4-15.3-102.6-42.5L320 301.3l-72.2 72.2C220.5 400.7 183.6 416 145.1 416C65 416 0 351 0 270.9V241.1zM274.7 256l-72.2-72.2c-15.2-15.2-35.9-23.8-57.4-23.8C100.3 160 64 196.3 64 241.1v29.7c0 44.8 36.3 81.1 81.1 81.1c21.5 0 42.2-8.5 57.4-23.8L274.7 256zm90.5 0l72.2 72.2c15.2 15.2 35.9 23.8 57.4 23.8c44.8 0 81.1-36.3 81.1-81.1V241.1c0-44.8-36.3-81.1-81.1-81.1c-21.5 0-42.2 8.5-57.4 23.8L365.3 256z"/></svg></td>
+      </tr>
+      {{ if or (strings.Contains .Params.Name "C++") (strings.Contains .Params.Name "Android via Java") (strings.Contains .Params.Name "Python via .NET") (strings.Contains .Params.Name "Python via Java")}}
+      <tr class="comp-table__columnGroup comp-table__tableRow">
+        <th scope="colgroup" class="comp-table__tableData" colspan="4">
+          <span>{{ i18n "enterprise-deployment" . }} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl4` . }}">
+  <span style="margin-left: .5em; color: grey">&#63;</span>
+</span></span></span>
+        </th>
+      </tr>
+      <tr class="comp-table__tableRow comp-table__tableBodyRow">
+        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "enterprise-deployment" . }} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl4` . }}">
+  <span style="margin-left: .5em; color: grey">&#63;</span>
+</span></span></span></th>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is not included" class="comp-table__unicodeSymbolX">✗</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is not included" class="comp-table__unicodeSymbolX">✗</span>
+        </td>
+      </tr>
+      {{ else if or (strings.Contains .Params.Name "SharePoint") (strings.Contains .Params.Name "Reporting Services") (strings.Contains .Params.Name "JasperReports") }}
+      <tr class="comp-table__columnGroup comp-table__tableRow">
+        <th scope="colgroup" class="comp-table__tableData" colspan="4">
+          <span>{{ i18n "unlimited-servers" . }} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl3` . }}">
+  <span style="margin-left: .5em; color: grey">&#63;</span>
+</span></span></span></span>
+        </th>
+      </tr>
+      <tr class="comp-table__tableRow comp-table__tableBodyRow">
+        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "unlimited-servers" . }} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl3` . }}">
+  <span style="margin-left: .5em; color: grey">&#63;</span>
+</span></span></span></th>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is not included" class="comp-table__unicodeSymbolX">✗</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is not included" class="comp-table__unicodeSymbolX">✗</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
+        </td>
+      </tr>
+      {{ else }}
+      <tr class="comp-table__columnGroup comp-table__tableRow">
+        <th scope="colgroup" class="comp-table__tableData" colspan="4">
+          <span>{{ i18n "use-with-web-sites" . }} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl5` . }}">
+  <span style="margin-left: .5em; color: grey">&#63;</span>
+</span></span></span></span>
+        </th>
+      </tr>
+      <tr class="comp-table__tableRow comp-table__tableBodyRow">
+        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "use-with-web-sites" . }} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl5` . }}">
+  <span style="margin-left: .5em; color: grey">&#63;</span>
+</span></span></span></span></th>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is not included" class="comp-table__unicodeSymbolX">✗</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is not included" class="comp-table__unicodeSymbolX">✗</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
+        </td>
+      </tr>
+      {{ end }}
+      {{ if not (or (strings.Contains .Params.Name "SharePoint") (strings.Contains .Params.Name "Reporting Services") (strings.Contains .Params.Name "JasperReports"))}}
+      <tr class="comp-table__columnGroup comp-table__tableRow">
+        <th scope="colgroup" class="comp-table__tableData" colspan="4">
+          <span>{{ i18n "external-distribution" . }} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl6` . }}">
+  <span style="margin-left: .5em; color: grey">&#63;</span>
+</span></span> 
+        </th>
+      </tr>
+      <tr class="comp-table__tableRow comp-table__tableBodyRow">
+        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "external-distribution" . }} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl6` . }}">
+  <span style="margin-left: .5em; color: grey">&#63;</span>
+</span></th>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is not included" class="comp-table__unicodeSymbolX">✗</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is not included" class="comp-table__unicodeSymbolX">✗</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
+        </td>
+      </tr>
+      {{ end }}
+      <tr class="comp-table__columnGroup comp-table__tableRow">
+        <th scope="colgroup" class="comp-table__tableData" colspan="4">
+          <span>{{ i18n "royalty-free" .}} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl7` . }}">
+  <span style="margin-left: .5em; color: grey">&#63;</span>
+</span></span>
+        </th>
+      </tr>
+      <tr class="comp-table__tableRow comp-table__tableBodyRow">
+        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "royalty-free" .}} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl7` . }}">
+  <span style="margin-left: .5em; color: grey">&#63;</span>
+</span></th>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
+        </td>
+      </tr>
+      {{ if not (or (strings.Contains .Params.Name "C++") (strings.Contains .Params.Name "Android via Java") (strings.Contains .Params.Name "Python via .NET") (strings.Contains .Params.Name "Python via Java") (strings.Contains .Params.Name "SharePoint") (strings.Contains .Params.Name "Reporting Services") (strings.Contains .Params.Name "JasperReports"))}}
+      <tr class="comp-table__columnGroup comp-table__tableRow">
+        <th scope="colgroup" class="comp-table__tableData" colspan="4">
+          <span>{{ i18n "use-in-a" .}} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl8` . }}">
+  <span style="margin-left: .5em; color: grey">&#63;</span>
+</span></span>
+        </th>
+      </tr>
+      <tr class="comp-table__tableRow comp-table__tableBodyRow">
+        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "use-in-a" .}}  <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl8` . }}">
+  <span style="margin-left: .5em; color: grey">&#63;</span>
+</span></th>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is not included" class="comp-table__unicodeSymbolX">✗</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is not included" class="comp-table__unicodeSymbolX">✗</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is not included" class="comp-table__unicodeSymbolX">✗</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is not included" class="comp-table__unicodeSymbolX">✗</span>
+        </td>
+      </tr>
+      <tr class="comp-table__columnGroup comp-table__tableRow">
+        <th scope="colgroup" class="comp-table__tableData" colspan="4">
+          <span>{{ i18n "license-type" . }} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl9` . }}">
+  <span style="margin-left: .5em; color: grey">&#63;</span></span>
+        </th>
+      </tr>
+      <tr class="comp-table__tableRow comp-table__tableBodyRow">
+        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "license-type" . }} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl9` . }}">
+  <span style="margin-left: .5em; color: grey">&#63;</span></th>
+        <td colspan="4" class="comp-table__tableData comp-table__tableDataCell ">{{ i18n "perpetual" . }}</td>
+      </tr>
+      {{ end }}
+      <tr class="comp-table__columnGroup comp-table__tableRow">
+        <th scope="colgroup" class="comp-table__tableData" colspan="4">
+          <span>{{ i18n "updates-and-hotfixes" .}} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl10` . }}">
+  <span style="margin-left: .5em; color: grey">&#63;</span></span>
+        </th>
+      </tr>
+      <tr class="comp-table__tableRow comp-table__tableBodyRow">
+        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "updates-and-hotfixes" .}} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl10` . }}">
+  <span style="margin-left: .5em; color: grey">&#63;</span></th>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
+        </td>
+      </tr>
+      {{ if or (strings.Contains .Params.Name "C++") (strings.Contains .Params.Name "Android via Java") (strings.Contains .Params.Name "Python via .NET") (strings.Contains .Params.Name "Python via Java") (strings.Contains .Params.Name "SharePoint") (strings.Contains .Params.Name "Reporting Services") (strings.Contains .Params.Name "JasperReports")}}
+      <tr class="comp-table__columnGroup comp-table__tableRow">
+        <th scope="colgroup" class="comp-table__tableData" colspan="4">
+          <span>{{ i18n "can-be-used" .}} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl11` . }}">
+  <span style="margin-left: .5em; color: grey">&#63;</span></span>
+        </th>
+      </tr>
+      <tr class="comp-table__tableRow comp-table__tableBodyRow">
+        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "can-be-used" .}} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl11` . }}">
+  <span style="margin-left: .5em; color: grey">&#63;</span></th>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is not included" class="comp-table__unicodeSymbolX">✗</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is not included" class="comp-table__unicodeSymbolX">✗</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
+        </td>
+      </tr>
+      {{ else }}
+      <tr class="comp-table__columnGroup comp-table__tableRow">
+        <th scope="colgroup" class="comp-table__tableData" colspan="4">
+          <span>{{ i18n "can-be-used" . }} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl12` .}}">
+  <span style="margin-left: .5em; color: grey">&#63;</span></span></span>
+        </th>
+      </tr>
+      <tr class="comp-table__tableRow comp-table__tableBodyRow">
+        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "can-be-used" .}} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl12` .}}">
+  <span style="margin-left: .5em; color: grey">&#63;</span></span></th>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
+        </td>
+      </tr>
+      {{ end }}
+      <tr class="comp-table__columnGroup comp-table__tableRow">
+        <th scope="colgroup" class="comp-table__tableData" colspan="4">
+          <span>{{ i18n "discount-applied" .}} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl13` .}}">
+  <span style="margin-left: .5em; color: grey">&#63;</span></span></span>
+        </th>
+      </tr>
+      <tr class="comp-table__tableRow comp-table__tableBodyRow">
+        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "discount-applied" . }}<span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl13` .}}">
+  <span style="margin-left: .5em; color: grey">&#63;</span></span></th>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
+        </td>
+      </tr>
+      <tr class="comp-table__columnGroup comp-table__tableRow">
+        <th scope="colgroup" class="comp-table__tableData" colspan="4">
+          <span>{{ i18n "technical-support" .}} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl14` . }}">
+  <span style="margin-left: .5em; color: grey">&#63;</span></span></span>
+        </th>
+      </tr>
+      <tr class="comp-table__tableRow comp-table__tableBodyRow">
+        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "technical-support" .}} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl14` . }}">
+  <span style="margin-left: .5em; color: grey">&#63;</span></span></th>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
+        </td>
+        <td class="comp-table__tableData comp-table__tableDataCell ">
+          <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <span>{{ i18n "note" .}} <strong>USD</strong> </span>
+</div>
+
+<style>
+/*************** Pricing Comparison Table CSS ***************/
+/* Customize the font family and table height below */
+ .comparisonTableContainer {
+     max-height: 90vh;
+    /* The height property ensures the column headers will be sticky on vertical scroll */
+}
+/* Start: Generated CSS */
+ @media (max-width:769px){
+    .comp-table__columnGroup .comp-table__tableData,.comp-table__columnGroupSection .comp-table__tableData,.comp-table__columnHeader:nth-child(2),.comp-table__tableBodyRow .comp-table__tableData:nth-child(2){
+        border-left:1px solid #bdbdbd!important
+    }
+    .comp-table__emptyCell,.comp-table__rowheader{
+        display:none
+    }
+    .comp-table__productImage{
+        height:auto;
+        max-width:100%
+    }
+    .comp-table__columnGroupSection .comp-table__tableData{
+        text-align:center;
+        font-size:1rem!important
+    }
+    .comparisonTableContainer .comp-table__tableData:not([scope="colgroup"]){
+        min-width:80px!important;
+        max-width:80px!important
+    }
+    .comparisonTableContainer.moreThan4 .comp-table__tableData:not([scope="colgroup"]){
+        min-width:90px!important;
+        max-width:90px!important
+    }
+    .comparisonTableContainer.moreThan4 .comp-table__tableData[scope="colgroup"]{
+        text-align:left
+    }
+    .comp-table__productImageContainer{
+        width:80px;
+        height:80px
+    }
+}
+.comparisonTableContainer.moreThan4 .comp-table__tableData[scope="colgroup"] span {
+    padding-left: 10px;
+}
+.comparisonTableContainer.moreThan4 .comp-table__tableData[scope="colgroup"]{
+    padding-left: 0
+}
+@media (max-width:769px) and (min-width:400px){
+    .comp-table__price,.comp-table__productLink,.comp-table__productName,.comp-table__tableData{
+        font-size:1rem!important
+    }
+}
+@media (max-width:400px){
+    .comp-table__price,.comp-table__productLink,.comp-table__productName,.comp-table__tableData{
+        font-size:.9rem!important
+    }
+}
+.comp-table{
+    width:100%;
+    margin:auto;
+    border-bottom:1px solid #bdbdbd;
+    table-layout:auto;
+    border-collapse:separate;
+    border-spacing:0;
+    margin-top: 2.4em;
+    margin-bottom: .5em;
+}
+.comparisonTableContainer{
+    overflow:auto
+}
+.comparisonTableContainer .comp-table__tableData:not([scope="colgroup"]){
+    min-width:150px;
+    max-width:150px
+}
+.comparisonTableContainer .comp-table__rowheader{
+    width:200px!important;
+    min-width:200px!important;
+    max-width:200px!important;
+    font-size:1.2rem;
+    border-left: 1px solid #bdbdbd;
+}
+.comp-table Check:before{
+    color:#4ac263;
+    font-size:20px
+}
+.comp-table X:before{
+    color:#808080;
+    font-size:20px
+}
+.comp-table__tableData{
+    border-right:1px solid #bdbdbd;
+    border-top:1px solid #bdbdbd
+}
+.comp-table caption{
+    position:absolute;
+    opacity:0;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden
+}
+.comp-table__rowheader{
+    /*width:20%;*/
+    text-align:left;
+    padding:10px;
+    font-weight:700;
+    color:#000000;
+    left:0;
+    position:sticky
+}
+.comp-table__tableData{
+    padding:12px 7px;
+    background:#ffffff;
+    border-color:#bdbdbd;
+    line-height:1.4
+}
+[scope="colgroup"] span{
+    position:sticky;
+    top:0;
+    left:0
+}
+.comp-table__columnGroup,.comp-table__columnHeader,.comp-table__tableDataCell{
+    text-align:center;
+    background-clip:padding-box!important
+}
+.comp-table__columnHeader{
+    font-weight:700;
+    background:#ffffff;
+    padding-top:10px;
+    position:relative
+}
+@media(min-height:450px){
+    .comp-table__columnHeaders{
+        position:sticky;
+        top:0;
+        left:0;
+        z-index:9
+    }
+}
+.comp-table__emptyCell{
+    border-top:1px solid #ffffff;
+    border-left:1px solid #ffffff;
+    background:#ffffff;
+    position: sticky;
+    left: 0;
+    z-index: 99;
+}
+.comp-table__tableDataCell{
+    color:#000000;
+    font-size:1.2rem;
+    padding:12px 3px
+}
+.comp-table__columnHeader:not(.comp-table__recommended) .comp-table__recommendedText{
+    display:none
+}
+.comp-table__recommendedText{
+    background:#4ac263;
+    color:#ffffff;
+    position:absolute;
+    top:0;
+    left:0;
+    font-size:1rem;
+    font-weight:600;
+    width:100%;
+    margin:0;
+    padding:4px 0
+}
+@media (min-width:769px){
+    .comp-table__tableBodyRow:nth-child(2n),.comp-table__tableBodyRow:nth-child(2n) .comp-table__tableData{
+        background:#ffffff
+    }
+    .comp-table__tableBodyRow:nth-child(4n),.comp-table__tableBodyRow:nth-child(4n) .comp-table__tableData{
+        background:#ededed
+    }
+    .comp-table__columnGroup{
+        display:none
+    }
+    .comp-table__productImage{
+        max-width:120px!important;
+        height:auto
+    }
+    .comp-table__rowheader{
+        padding-left:20px!important
+    }
+    .comp-table__columnGroupSection .comp-table__tableData{
+        text-align:left
+    }
+    .comp-table__productImageContainer{
+        width:140px;
+        height:140px
+    }
+}
+.comp-table__columnGroup .comp-table__tableData{
+    background:#f0f0f0;
+    color:#000000;
+    font-weight:700;
+    border-top:4px solid #bdbdbd
+}
+.comp-table__buyProduct{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:end;
+    grid-gap:10px;
+    height:auto;
+    position:relative
+}
+.comp-table__productLink:hover{
+    filter:brightness(.9)
+}
+.comp-table__productLink{
+    border:2px solid #000000;
+    background:#ffffff;
+    color:#000000;
+    padding:12px 2px;
+    border-radius:5px;
+    width:95%;
+    font-size:1.1rem;
+    line-height:1.2;
+    pointer-events:all !important
+}
+.comp-table__recommended .comp-table__productLink{
+    border:2px solid transparent;
+    background:#f27e3d;
+    color:#ffffff;
+}
+.comp-table__price{
+    font-size:1.8rem;
+    margin-top:10px;
+    margin-bottom:10px;
+    color:#000000;
+    word-break:break-word;
+    line-height:1.2
+}
+.comp-table__productName{
+    line-height:1.2;
+    color:#000000;
+    /*height:;*/
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.2rem
+}
+.comp-table__recurrence{
+    font-weight:600;
+    font-size:1rem;
+    margin-top:-10px;
+    margin-bottom:20px;
+    color:#000000;
+    line-height:1rem
+}
+.comp-table__columnGroupSection .comp-table__tableData{
+    font-size:.9rem;
+    text-transform:uppercase;
+    color:#000000;
+    background:#9fd0d1;
+    padding:15px 5px;
+    border-left:1px solid #bdbdbd
+}
+.comp-table__unicodeSymbolCheck{
+    font-size:22px;
+    font-weight:bold
+}
+.comp-table__unicodeSymbolX{
+    font-size:22px;
+    font-weight:bold
+}
+.comp-table__unicodeSymbolX{
+    color:#808080
+}
+.comp-table__unicodeSymbolCheck{
+    color:#4ac263
+}
+.comp-table__recommended{
+    background:#eafbed!important
+}
+.comp-table__productImageContainer{
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    margin-bottom:10px
+}
+/*************** Pricing Comparison Table CSS ***************/
+</style>

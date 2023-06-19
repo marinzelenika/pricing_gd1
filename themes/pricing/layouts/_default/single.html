@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class="container">
+{{ if not (or (strings.Contains .Params.Name "C++") (strings.Contains .Params.Name "Android via Java") (strings.Contains .Params.Name "Python via .NET") (strings.Contains .Params.Name "Python via Java") (strings.Contains .Params.Name "SharePoint") (strings.Contains .Params.Name "Reporting Services") (strings.Contains .Params.Name "JasperReports") (strings.Contains .Params.Name "PHP via Java") (strings.Contains .Params.Name "Node.js via Java") (strings.Contains .Params.Name "JavaScript via Java") (strings.Contains .Params.Name "ZIP for .NET"))}}
+  <div class="m-5">
+    <ul class="nav nav-pills menu justify-content-center" id="myTab">
+        <div class="wrapper">
+      <li class="nav-item active">
+        <a href="#yearly" class="nav-link active">{{ i18n "yearly" . }}</a>
+      </li>
+      <li class="nav-item">
+        <a href="#payperuse" class="nav-link">{{ i18n "pay-per-use" .}}</a>
+      </li>
+      </div>
+    </ul>
+  </div>
+{{ end }}
+  <div class="tab-content">
+    {{ partial "first-tab" . }}
+    {{ partial "second-tab" . }}
+  </div>
+  {{ partial "green-btn" . }}
+</div>
+{{ end }}

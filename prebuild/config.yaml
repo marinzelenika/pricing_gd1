@@ -1,0 +1,16 @@
+# config.yaml
+disableKinds:
+- sitemap
+- taxonomy
+- term
+outputs:
+  home:
+  - html
+  - json
+params:
+  file_format: json
+caches:
+  getresource:
+    maxAge: 1h
+
+

@@ -1,0 +1,43 @@
+<head>
+    {{ if .IsHome }}
+    <title>{{ .Site.Title }}</title>
+    {{ else }}
+    <title>{{ .Page.Params.Name }}</title>
+    {{ end }}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+        content="{{ .Params.Description }}" />
+    <meta name="dc.relation" content="{{ .Site.BaseURL }}" />
+    <meta name="theme-color" content="#0ebcc1">
+    <meta name="robots" content="index,follow">
+    <link rel="shortcut icon" type="image/ico" href="//cms.admin.containerize.com/templates/groupdocs/favicon.ico">
+    <link rel="stylesheet" href="https://www.aspose.com/css/locale.min.css" />
+    {{ if .Page.IsTranslated }} {{- partial "langswitcher.html" . -}} {{ end }} 
+    {{ $options := (dict "targetPath" "css/styles.css" "outputStyle" "compressed") }}
+
+    {{ $style := resources.Get "sass/main.scss" | toCSS  $options | minify }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" media="screen">
+    {{ $main := resources.Get "js/index.js" | js.Build $options | resources.Minify | fingerprint -}}
+    <script src="{{ $main.RelPermalink }}" integrity="{{ $main.Data.Integrity }}" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;700&display=swap" rel="stylesheet">
+{{/*  <script async="" src="https://chat.containerize.com/livechat/rocketchat-livechat.min.js?_=201903270000"></script>  */}}
+{{/*  <script type="text/javascript">
+(function(w, d, s, u) {
+	w.RocketChat = function(c) { w.RocketChat._.push(c) }; w.RocketChat._ = []; w.RocketChat.url = u;
+	var h = d.getElementsByTagName(s)[0], j = d.createElement(s);
+	j.async = true; j.src = 'https://chat.containerize.com/livechat/rocketchat-livechat.min.js?_=201903270000';
+	h.parentNode.insertBefore(j, h);
+})(window, document, 'script', 'https://chat.containerize.com/livechat');
+RocketChat(function(){
+	this.setDepartment('2pqwFMQKg3tA6J7GZ');
+	var that = this;
+	this.onPrechatFormSubmit(function(data) {
+		that.setCustomField('departmentName', 'Aspose');
+	});
+});
+</script>  */}}
+</head>

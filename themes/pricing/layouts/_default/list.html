@@ -1,0 +1,170 @@
+{{ define "main" }}
+
+{{ with resources.GetRemote
+"https://purchase-api.dynabic.com/v1.2/productFamily/site-groupdocs?isArchived=&pageNumber=&pageSize=&applyDisplayOrder=true&includeProducts=false"
+}} {{ with .Err }} {{ warnf "%s" . }} {{ else }} {{ with .Content }} {{ with
+transform.Unmarshal . }}
+<!-- Button to toggle the sidebar on small screens -->
+<div class="d-md-none">
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSidebar" aria-expanded="false" aria-controls="collapseSidebar">
+        Toggle Sidebar
+    </button>
+</div>
+
+<!-- Collapsible sidebar for small screens -->
+<div class="d-md-none collapse" id="collapseSidebar">
+    <nav class="right-sidebar">
+        <ul class="nav flex-column">
+            {{ range . }}
+                <li class="nav-item">
+                    {{ $split := split .Name " " }}
+                    {{ $splitName := index $split 0 }}
+                    <a class="nav-link" href="#{{ .Id }}">{{ $splitName }}</a>
+                </li>
+            {{ end }}
+        </ul>
+    </nav>
+</div>
+
+<!-- Right Sidebar for medium and larger screens -->
+<nav id="rightSidebar" class="d-none d-md-block right-sidebar">
+    <ul class="nav flex-column">
+        {{ range . }}
+            <li class="nav-item">
+                {{ $split := split .Name " " }}
+                {{ $splitName := index $split 0 }}
+                <a class="nav-link" href="#{{ .Id }}">{{ $splitName }}</a>
+            </li>
+        {{ end }}
+    </ul>
+</nav>
+<div class="container">
+<div class="row">
+  {{ range . }}
+  <div class="col-xxl-3 col-lg-4 col-md-6 col-sm-12 d-flex">
+    <div class="card mt-3 mb-3 flex-fill" id="{{ .Id }}">
+      <div class="card-body">
+        {{ $imgUrl := substr .SmallLogoImageSrc 2 }}
+        <img
+          class="product-icon"
+          src="{{ printf "https://%s" $imgUrl }}"
+          width="50"
+          height="50"
+          alt="{{ .Name }}"
+        />
+        {{ $split := split .Name " " }}
+        {{ $splitName := index $split 0 }}
+        <h5 class="card-title"><strong>{{ $splitName }}</strong></h5>
+        <p class="card-text">
+            {{ $descc := print "desc-" "" .Name }}
+            {{ i18n $descc . }}
+        </p>
+       
+        <p class="card-text">
+          {{ i18n "from" . }} <br />
+            {{ $name := .Name }}
+            {{ $dataJ := getJSON "data/products.json" }}
+            {{ range $dataJ }}
+            {{ range .products }}
+            {{ if eq .name $name }}
+            <strong style="font-size: x-large; color: black">${{ .price }}</strong>
+            {{end}}
+            {{end}}
+            {{end}}
+          <br />{{ i18n "per" .}}
+        </p>
+
+        <div class="dropdown">
+          <a
+            class="btn btn-secondary dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            {{ i18n "choose-platform" . }}
+          </a>
+          
+
+          <ul class="dropdown-menu">
+            {{ $id := .Id }}
+            {{ range $.Site.Pages }}
+            {{ if eq .Params.FamilyId $id }}
+            {{ if not (strings.Contains .Params.Name "Product Family") }}
+            <li><a class="dropdown-item" href="{{ .RelPermalink }}">{{ .Params.Name }}</a></li>
+            {{ end }}
+            {{ end }}
+            {{ end }}
+          </ul>
+          
+        </div>
+
+        <div class="hr-or">
+          <span>{{ i18n "or" . }}</span>
+        </div>
+
+        
+        {{ $url := print
+          "https://purchase-api.dynabic.com/v1.2/productFamily/site-groupdocs/name-"
+          "" .Name }} {{ with resources.GetRemote $url }} {{ with .Err }} {{
+          warnf "%s" . }} {{ else }} {{ with .Content }} {{ with
+          transform.Unmarshal . }}
+        {{ range $i, $j := .Products }}
+        {{ $prodName := .Name }}
+        {{ range first 1 .PricingPlans }}
+        {{ range .PaymentScheduleList }}
+        {{ if strings.Contains $prodName "Family" }}
+        <span style="font-size: xx-small; word-spacing: 0.01px; color: gray;"
+          >{{ i18n "getall" .}}
+        </span>
+        <br />
+        <strong style="font-size: x-large">${{ .SubscriptionPeriodCharge }} </strong>
+        <div class="d-flex justify-content-center">
+                    {{ range $.Site.RegularPages }}
+            {{ if eq .Params.FamilyId $id }}
+            {{/*  {{ if strings.Contains .Params.Name "Product Family" }}  */}}
+          <a href="{{ .RelPermalink }}" class="btn btn-primary btn-lg fam-pack-btn"
+            ><span style="margin: auto">{{ i18n "select" . }}</span></a
+          >
+          {{ end }}{{ end }}{{/*  {{ end }}  */}}
+        </div>
+        {{ else if eq $i 0 }}
+        <span style="font-size: x-small; font-style:italic;">{{ i18n "only-supported" }}</span>
+        <div class="d-flex justify-content-center">
+                    {{ range $.Site.Pages }}
+            {{ if eq .Params.FamilyId $id }}
+          <a href="{{ .RelPermalink }}" class="btn btn-primary btn-lg fam-pack-btn"
+            ><span style="margin: auto">{{ .Params.Name }}</span></a
+          >
+          {{ end }}{{ end }}
+        </div>
+        {{ end }}
+        {{ end }}
+        {{ end }}
+        {{ end }}
+        {{ end }} {{ end }}{{ end }}{{ end }}
+        
+      </div>
+    </div>
+  </div>
+  {{ end }}
+</div>
+<p class="mt-4 mb-4">*All prices are in USD</p>
+{{ end }}{{ end }}{{ end }}{{ end }}
+<h2 class="mt-5">Knowledgebase</h2>
+{{- range first 4 (where .Site.RegularPages "Type" "knowledgebase") -}}
+<div class="card border-primary mb-3 article-card" onclick="window.location='{{ .RelPermalink }}';">
+  <div class="card-body text-primary">
+    <h5 class="card-title" style="color: black;">{{ .Params.Name }}</h5>
+    <p class="card-text" id="card-text">{{ .Params.description }}</p>
+  </div>
+</div>
+{{ end }}
+<div class="text-center">
+<a href="{{ .Site.BaseURL }}knowledgebase" class="btn btn-primary read-more">
+    Read more...
+</a>
+  <hr style="margin-bottom: 15px; color:black">
+  </div>
+</div>
+{{ end }}

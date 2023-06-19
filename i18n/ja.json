@@ -1,0 +1,248 @@
+[
+  {
+    "desc-GroupDocs.Total Product Family": {
+      "other": "他の商用製品を必要とせずに、独自のデスクトップソリューションやWebアプリ内でドキュメントを操作します。"
+    },
+    "desc-GroupDocs.Viewer Product Family": {
+      "other": "プログラマーや専門家向けの柔軟なドキュメント表示ソリューションで、広く使用されるファイル形式をどこでもレンダリングして表示します。"
+    },
+    "desc-GroupDocs.Conversion Product Family": {
+      "other": "アプリとAPIベースのソリューションで、さまざまなプラットフォームで人気のあるドキュメントおよび画像ファイル形式を変換します。"
+    },
+    "desc-GroupDocs.Editor Product Family": {
+      "other": "Microsoft Office、OpenOffice、PDF、HTMLなどのドキュメントファイル形式を操作するドキュメントエディター。"
+    },
+    "desc-Groupdocs.Merger Product Family": {
+      "other": "簡単に複数のドキュメントを結合したり、Microsoft Office、OpenOffice、PDFなどのドキュメントをページ単位で分割したりします。"
+    },
+    "desc-GroupDocs.Comparison Product Family": {
+      "other": "オンプレミスおよびクラウドAPIとアプリベースのソリューションを使用して、人気のあるプラットフォーム上でドキュメントのコンテンツとスタイルを比較します。"
+    },
+    "desc-GroupDocs.Annotation Product Family": {
+      "other": "アプリでドキュメントに注釈を付けるか、オンプレミスまたはクラウドAPIを使用して、人気のあるプラットフォーム上で独自のカスタム注釈アプリケーションを構築します。"
+    },
+    "desc-GroupDocs.Assembly Product Family": {
+      "other": "クロスプラットフォームのアプリとAPIを使用して、カスタムテンプレートとさまざまなデータソースからさまざまな形式のレポートを自動生成します。"
+    },
+    "desc-GroupDocs.Parser Product Family": {
+      "other": "選択したMicrosoft Office、OpenOffice、PDF、HTMLなどのファイル形式のテキスト、画像、メタデータ、およびエンコーディングを抽出します。"
+    },
+    "desc-GroupDocs.Signature Product Family": {
+      "other": "柔軟なAPIとプログラマーおよびエンドユーザー向けのアプリベースのソリューションを使用して、任意のプラットフォームでデジタルドキュメントと画像に署名します。"
+    },
+    "desc-GroupDocs.Metadata Product Family": {
+      "other": "一般的なプラットフォーム上のドキュメント、画像、および他のファイル形式のメタデータを読み取り、編集、置換、削除するためのAPIおよびアプリ。"
+    },
+    "desc-GroupDocs.Search Product Family": {
+      "other": "Microsoft Office、OpenOffice、PDFなどのさまざまなドキュメントファイル形式でテキスト検索とインデックス作成を実行します。"
+    },
+    "desc-GroupDocs.Watermark Product Family": {
+      "other": "スマート検索を使用して、ドキュメントと画像にテキストベースおよび画像ベースの透かしを迅速に適用および操作します。"
+    },
+    "desc-Groupdocs.Redaction Product Family": {
+      "other": "Microsoft Officeドキュメント、スプレッドシート、プレゼンテーション、PDF、および画像から個人情報を隠したり削除したりします。"
+    },
+
+    "desc-GroupDocs.Classification Product Family": {
+      "other": "IAB（バージョン2）とドキュメントタクソノミーを使用して、ドキュメントやテキストを正確なカテゴリに自動分類します。.NETアプリケーションのいかなるタイプでも利用できます。"
+    },
+    "only-supported": {
+      "other": "この製品は現在、.NETプラットフォームのみサポートされており、したがってファミリーパックは利用できません。"
+    },
+    "from": {
+      "other": "から"
+    },
+    "per": {
+      "other": "プラットフォーム、年ごと"
+    },
+    "choose-platform": {
+      "other": "プラットフォームを選択してください"
+    },
+    "or": {
+      "other": "または"
+    },
+    "getall": {
+      "other": "ファミリーパック全体を入手："
+    },
+    "select": {
+      "other": "ファミリーパックを選択してください"
+    },
+    "family": {
+      "other": "ファミリー"
+    },
+    "pricing-info": {
+      "other": "価格情報"
+    },
+    "pricing": {
+      "other": "価格"
+    },
+    "home-description": {
+      "other": "ウェブ、モバイル、またはデスクトップアプリを強化し、ドキュメントの表示、注釈付け、変換、電子署名、比較、アセンブルを行う機能を提供します。"
+    },
+    "estimate": {
+      "other": "月額費用の見積もりは、次の"
+    },
+    "simulator": {
+      "other": "シミュレーター"
+    },
+    "with-free-support": {
+      "other": "無料サポート付き"
+    },
+    "with-paid-support": {
+      "other": "有料サポート付き"
+    },
+    "select-only": {
+      "other": "選択"
+    },
+    "per-developer-per-month": {
+      "other": "開発者ごと、月額"
+    },
+    "with-paid-consulting": {
+      "other": "有料コンサルティング付き"
+    },
+    "month": {
+      "other": "月"
+    },
+    "year": {
+      "other": "年"
+    },
+    "developers-licensed": {
+      "other": "ライセンスされた開発者数"
+    },
+    "derived-work": {
+      "other": "派生作品の場所"
+    },
+    "enterprise-deployment": {
+      "other": "エンタープライズデプロイメント"
+    },
+    "unlimited-servers": {
+      "other": "無制限のサーバーへの展開"
+    },
+    "use-with-web-sites": {
+      "other": "ウェブサイト/アプリでの使用"
+    },
+    "external-distribution": {
+      "other": "外部配布を許可"
+    },
+    "royalty-free": {
+      "other": "ロイヤリティフリー"
+    },
+    "use-in-a": {
+      "other": "開発ライブラリ、API、またはSDKでの使用"
+    },
+    "license-type": {
+      "other": "ライセンスタイプ"
+    },
+    "perpetual": {
+      "other": "永久"
+    },
+    "updates-and-hotfixes": {
+      "other": "1年間の更新とホットフィックス"
+    },
+    "can-be-used": {
+      "other": "無制限のアプリケーションを作成するために使用できます"
+    },
+    "discount-applied": {
+      "other": "複数購入に割引が適用されます"
+    },
+    "technical-support": {
+      "other": "無料の技術サポート"
+    },
+    "note": {
+      "other": "注意：すべての価格は"
+    },
+    "help-me-choose": {
+      "other": "適切なライセンスタイプを選択してください"
+    },
+    "pay-per-use": {
+      "other": "利用ごとに支払う"
+    },
+    "yearly": {
+      "other": "年間"
+    },
+    "expl1": {
+      "other": "開発者：開発者はソフトウェア開発者、システム管理者、レポート作成者、製品を使用する他の人など、製品を使用するすべての開発者がライセンスが必要です。"
+    },
+    "expl2": {
+      "other": "場所：場所とは、派生作品が使用される物理的な場所であり、組織内外の異なる住所やオフィスビルです。派生作品：Aspose製品を組み込んだり使用したりするソフトウェアプログラム、サイト、レポートビルダーなどの解決策、作業、製品を指します。"
+    },
+    "expl3": {
+      "other": "物理的な場所（異なる住所やオフィスビル）の無制限の物理的または仮想のサーバーで派生作品を無制限に配布できます。派生作品：Aspose製品を組み込んだり使用したりするソフトウェアプログラム、サイト、レポートビルダーなどの解決策、作業、製品を指します。"
+    },
+    "expl4": {
+      "other": "1つのエンタープライズ（会社）内での1つのアプリデプロイメント内で製品を使用することを許可します。"
+    },
+    "expl5": {
+      "other": "派生作品を公開向けのウェブサイト/アプリ、エクストラネット、マルチサイトイントラネット、またはSaaSプロジェクト使用シナリオに配布できます。"
+    },
+    "expl6": {
+      "other": "派生作品をサードパーティに配布できます（他の人に販売されるソフトウェアに埋め込まれるなど）。"
+    },
+    "expl7": {
+      "other": "各使用ごと、各コピーごと、または販売されるボリュームごとにロイヤリティ料やライセンス料を支払う必要はありません。"
+    },
+    "expl8": {
+      "other": "他の開発者が使用するAPIを備えたソフトウェアを開発する場合に該当します。"
+    },
+    "expl9": {
+      "other": "永久：製品の使用ライセンスに有効期限はありません。利用ごとに支払う：製品の使用に対して毎月ロイヤリティ料を支払います。"
+    },
+    "expl10": {
+      "other": "購入にはサブスクリプションが含まれ、1年間の製品の更新を受ける権利が付いています。1年が経過しても、Asposeを使用する既存のアプリケーションは引き続き動作しますが、製品の追加の更新をダウンロードして使用するには、まずサブスクリプションを更新する必要があります。なお、常に最新の状態であるMeteredライセンスにはこれは当てはまりません。"
+    },
+    "expl11": {
+      "other": "Aspose製品で作成するアプリケーションの数に制限はありません。"
+    },
+    "expl12": {
+      "other": "Aspose製品で作成するアプリケーションの数に制限はありません。"
+    },
+    "expl13": {
+      "other": "複数のライセンスを購入し、割引を受けることができます。追加の開発者を追加してもコストが増えないため、Meteredライセンスには内蔵の割引が適用されます。"
+    },
+    "expl14": {
+      "other": "購入前の無料の技術サポートを受けたり、メンテナンスサブスクリプションの期限が切れていても技術サポートを受けることができます。優先サポートを受けるには、有料のサポートオプションを確認してください。"
+    },
+    "expl15": {
+      "other": "常に最新の状態であるMeteredライセンスにはこれは当てはまりません。"
+    },
+    "total-credits": {
+      "other": "総クレジット"
+    },
+    "rate-credit": {
+      "other": "レート/クレジット"
+    },
+    "price-month": {
+      "other": "価格/月"
+    },
+    "to": {
+      "other": "から"
+    },
+    "flat-rate": {
+      "other": "一括料金"
+    },
+    "next": {
+      "other": "次へ"
+    },
+    "fixed": {
+      "other": "固定"
+    },
+    "any-additional": {
+      "other": "追加の"
+    },
+    "calculate": {
+      "other": "計算"
+    },
+    "processed-credits": {
+      "other": "処理済みクレジット総数"
+    },
+    "total-price": {
+      "other": "合計金額"
+    },
+    "metered": {
+      "other": "メーター付き"
+    },
+    "get-temp-lic": {
+      "other": "一時ライセンスを取得する"
+    }
+  }
+]

@@ -1,0 +1,6 @@
+[build]
+  command = "cd prebuild && hugo --gc && cd .. && hugo --gc"
+  publish = "public"
+
+[build.environment]
+  HUGO_VERSION = "0.111.3"

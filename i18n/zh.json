@@ -1,0 +1,247 @@
+[
+  {
+    "desc-GroupDocs.Total Product Family": {
+      "other": "在您自己的桌面解决方案和 Web 应用程序中操作文档，无需其他商业产品。"
+    },
+    "desc-GroupDocs.Viewer Product Family": {
+      "other": "灵活的文档查看解决方案，供程序员和专业人士在任何地方呈现和显示广泛使用的文件格式。"
+    },
+    "desc-GroupDocs.Conversion Product Family": {
+      "other": "在任何平台上使用应用程序和基于 API 的解决方案转换流行的文档和图像文件格式。"
+    },
+    "desc-GroupDocs.Editor Product Family": {
+      "other": "文档编辑器，用于操作 Microsoft Office、OpenOffice、PDF、HTML 和其他文档文件格式。"
+    },
+    "desc-Groupdocs.Merger Product Family": {
+      "other": "轻松合并多个文档或将 Microsoft Office、OpenOffice、PDF 和其他文档拆分为页面。"
+    },
+    "desc-GroupDocs.Comparison Product Family": {
+      "other": "使用我们的本地和云 API 和基于应用程序的解决方案，在流行的平台上比较文档内容和样式。"
+    },
+    "desc-GroupDocs.Annotation Product Family": {
+      "other": "使用我们的应用程序注释文档，或构建您自己的自定义注释应用程序，在流行的平台上使用本地或云 API。"
+    },
+    "desc-GroupDocs.Assembly Product Family": {
+      "other": "使用我们的跨平台应用程序和 API，从自定义模板和不同数据源中以不同格式自动生成报告。"
+    },
+    "desc-GroupDocs.Parser Product Family": {
+      "other": "提取您选择的 Microsoft Office、OpenOffice、PDF、HTML 和其他文件格式的文本、图像、元数据和编码检测。"
+    },
+    "desc-GroupDocs.Signature Product Family": {
+      "other": "使用我们灵活的 API 和基于应用程序的解决方案，在任何平台上对数字文档和图像进行签名。供程序员和最终用户使用。"
+    },
+    "desc-GroupDocs.Metadata Product Family": {
+      "other": "用于在流行的平台上读取、编辑、替换和删除文档、图像和其他文件格式的元数据的 API 和应用程序。"
+    },
+    "desc-GroupDocs.Search Product Family": {
+      "other": "在 Microsoft Office、OpenOffice、PDF 和许多其他文档文件格式上执行文本搜索和索引。"
+    },
+    "desc-GroupDocs.Watermark Product Family": {
+      "other": "使用智能搜索快速应用和操作文档和图像的基于文本和图像的水印。"
+    },
+    "desc-Groupdocs.Redaction Product Family": {
+      "other": "从 Microsoft Office 文档、电子表格、演示文稿、PDF 和图像中隐藏或删除私人信息。"
+    },
+    "desc-GroupDocs.Classification Product Family": {
+      "other": "使用 IAB（版本 2）和文档分类法在任何类型的 .NET 应用程序中以准确的分类对文档和文本进行编程分类。"
+    },
+    "only-supported": {
+      "other": "该产品目前仅支持 .NET 平台，因此没有提供家庭套装。"
+    },
+    "from": {
+      "other": "从"
+    },
+    "per": {
+      "other": "每个平台，每年"
+    },
+    "choose-platform": {
+      "other": "选择一个平台"
+    },
+    "or": {
+      "other": "或"
+    },
+    "getall": {
+      "other": "从起始价格获取所有平台的家庭套装"
+    },
+    "select": {
+      "other": "选择家庭套装"
+    },
+    "family": {
+      "other": "家族"
+    },
+    "pricing-info": {
+      "other": "定价信息"
+    },
+    "pricing": {
+      "other": "定价"
+    },
+    "home-description": {
+      "other": "通过能够显示、注释、转换、电子签名、比较和组装文档，增强您的 Web、移动或桌面应用程序的功能。"
+    },
+    "estimate": {
+      "other": "您可以使用我们的"
+    },
+    "simulator": {
+      "other": "模拟器"
+    },
+    "with-free-support": {
+      "other": "提供免费支持"
+    },
+    "with-paid-support": {
+      "other": "提供付费支持"
+    },
+    "select-only": {
+      "other": "选择"
+    },
+    "per-developer-per-month": {
+      "other": "每开发人员，每月"
+    },
+    "with-paid-consulting": {
+      "other": "提供付费咨询"
+    },
+    "month": {
+      "other": "月"
+    },
+    "year": {
+      "other": "年"
+    },
+    "developers-licensed": {
+      "other": "许可的开发人员"
+    },
+    "derived-work": {
+      "other": "在位置使用衍生作品"
+    },
+    "enterprise-deployment": {
+      "other": "企业部署"
+    },
+    "unlimited-servers": {
+      "other": "部署到无限数量的服务器"
+    },
+    "use-with-web-sites": {
+      "other": "供网站/应用程序使用"
+    },
+    "external-distribution": {
+      "other": "允许外部分发"
+    },
+    "royalty-free": {
+      "other": "免版税"
+    },
+    "use-in-a": {
+      "other": "在开发库、API 或 SDK 中使用"
+    },
+    "license-type": {
+      "other": "许可类型"
+    },
+    "perpetual": {
+      "other": "永久"
+    },
+    "updates-and-hotfixes": {
+      "other": "一年内的更新和热修复"
+    },
+    "can-be-used": {
+      "other": "可用于创建无限数量的应用程序"
+    },
+    "discount-applied": {
+      "other": "多次购买可享受折扣"
+    },
+    "technical-support": {
+      "other": "免费技术支持"
+    },
+    "note": {
+      "other": "注意：所有价格均以"
+    },
+    "help-me-choose": {
+      "other": "帮助我选择正确的许可类型"
+    },
+    "pay-per-use": {
+      "other": "按使用付费"
+    },
+    "yearly": {
+      "other": "年度"
+    },
+    "expl1": {
+      "other": "开发人员：可以是软件开发人员、系统管理员、报表作者或任何使用该产品的人员。每个与 Aspose 产品一起工作的开发人员都需要获得许可。"
+    },
+    "expl2": {
+      "other": "位置：位置是使用衍生作品的物理位置；组织内或外的每个不同地址或办公楼。衍生作品：包含或使用 Aspose 产品的软件程序、站点、报表生成器或任何其他解决方案、工作或产品。"
+    },
+    "expl3": {
+      "other": "允许在无限数量的物理或虚拟服务器以及无限数量的物理位置（不同的地址或办公楼）上分发衍生作品。衍生作品：包含或使用 Aspose 产品的软件程序、站点、报表生成器或任何其他解决方案、工作或产品。"
+    },
+    "expl4": {
+      "other": "允许产品在一个企业（公司）内的一个应用部署中使用"
+    },
+    "expl5": {
+      "other": "允许在公共面向的网站/应用程序、外部网络、多站点内部网络或 SaaS 项目使用场景中分发衍生作品。"
+    },
+    "expl6": {
+      "other": "允许将衍生作品分发给第三方（例如嵌入在销售给他人的软件中）。"
+    },
+    "expl7": {
+      "other": "使用许可无需为每次使用、每个副本或销售的每个数量支付版税或许可费。"
+    },
+    "expl8": {
+      "other": "如果您为其他开发人员提供使用的 API 开发软件，则适用于您。"
+    },
+    "expl9": {
+      "other": "永久许可：使用产品的许可不会过期。按使用付费：每月支付使用产品的版税。"
+    },
+    "expl10": {
+      "other": "购买包括订阅，使您有权获得一年的产品更新。当一年过去后，您仍然有权使用产品，因此使用 Aspose 的现有应用程序将继续正常运行，但要下载和使用产品的进一步更新，您首先必须续订订阅。注意：此规则不适用于按使用付费的许可证，该许可证始终保持最新状态。"
+    },
+    "expl11": {
+      "other": "使用 Aspose 产品创建的应用程序数量没有限制。"
+    },
+    "expl12": {
+      "other": "使用 Aspose 产品创建的应用程序数量没有限制。"
+    },
+    "expl13": {
+      "other": "购买多个许可证可享受折扣。按使用付费的许可证已经包含内建的折扣，因为添加额外的开发人员不会增加成本。"
+    },
+    "expl14": {
+      "other": "在购买之前或即使您的维护订阅已过期，您都可以获得免费技术支持。如需优先支持，请查看付费支持选项。"
+    },
+    "expl15": {
+      "other": "此规则不适用于按使用付费的许可证，该许可证始终保持最新状态。"
+    },
+    "total-credits": {
+      "other": "总信用额"
+    },
+    "rate-credit": {
+      "other": "费率/信用额"
+    },
+    "price-month": {
+      "other": "每月价格"
+    },
+    "to": {
+      "other": "到"
+    },
+    "flat-rate": {
+      "other": "固定费率"
+    },
+    "next": {
+      "other": "下一步"
+    },
+    "fixed": {
+      "other": "固定"
+    },
+    "any-additional": {
+      "other": "任何额外的"
+    },
+    "calculate": {
+      "other": "计算"
+    },
+    "processed-credits": {
+      "other": "总处理信用额"
+    },
+    "total-price": {
+      "other": "总价格"
+    },
+    "metered": {
+      "other": "按使用付费"
+    },
+    "get-temp-lic": {
+      "other": "获取临时许可证"
+    }
+  }
+]

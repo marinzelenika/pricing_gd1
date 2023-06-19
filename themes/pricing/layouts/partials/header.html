@@ -1,0 +1,41 @@
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9">
+        {{ if not .IsHome }}
+        {{ if in .RelPermalink "/knowledgebase/" }}
+        <h2 class="display-6 kb-header">{{ .Params.Name }}</h2>
+        <p class="lead kb-lead">
+      {{ if eq .Site.LanguageCode "en"}}
+      {{ .Params.Description }}
+      {{ end }}
+    </p> 
+        {{ else }}
+    <h2 class="display-6">{{ .Params.Name }}</h2>
+    <p class="lead">
+      {{ if eq .Site.LanguageCode "en"}}
+      {{ .Params.Description }}
+      {{ end }}
+    </p> 
+      {{ end }}
+    {{ else }}
+    <h2 class="display-6">{{ i18n "pricing-info" . }}</h2>
+    <p class="lead">
+      {{ i18n "home-description" . }}
+    </p> 
+    {{ end }}
+    </div>
+    <div class="col-sm-3" style="display: flex; align-items: center;">
+      {{ with .Params.LargeImg }}
+      <img src="{{ printf "https://%s" . }}" alt="product logo" width="43%">
+      {{end}}
+    </div>
+    <div class="col-sm-3">
+      {{ if .IsHome }}
+      <a class="btn btn-primary btn-lg temp-license-btn" href="https://purchase.groupdocs.com/temporary-license/">{{ i18n "get-temp-lic" . }}</a>
+      {{ end }}
+    </div>
+    </div>
+  </div>
+</div>
+

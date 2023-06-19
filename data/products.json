@@ -1,0 +1,21 @@
+[
+  {
+    "products": [
+      { "name": "GroupDocs.Total Product Family", "price": "2999" },
+      { "name": "GroupDocs.Viewer Product Family", "price": "1199" },
+      { "name": "GroupDocs.Conversion Product Family", "price": "1199" },
+      { "name": "GroupDocs.Editor Product Family", "price": "1199" },
+      { "name": "Groupdocs.Merger Product Family", "price": "1199" },
+      { "name": "GroupDocs.Comparison Product Family", "price": "1199" },
+      { "name": "GroupDocs.Annotation Product Family", "price": "1199" },
+      { "name": "GroupDocs.Assembly Product Family", "price": "1199" },
+      { "name": "GroupDocs.Parser Product Family", "price": "1199" },
+      { "name": "GroupDocs.Signature Product Family", "price": "1199" },
+      { "name": "GroupDocs.Metadata Product Family", "price": "1199" },
+      { "name": "GroupDocs.Search Product Family", "price": "1199" },
+      { "name": "GroupDocs.Watermark Product Family", "price": "1199" },
+      { "name": "Groupdocs.Redaction Product Family", "price": "1199" },
+      { "name": "GroupDocs.Classification Product Family", "price": "1199" }
+    ]
+  }
+]
