@@ -4,40 +4,19 @@
 "https://purchase-api.dynabic.com/v1.2/productFamily/site-groupdocs?isArchived=&pageNumber=&pageSize=&applyDisplayOrder=true&includeProducts=false"
 }} {{ with .Err }} {{ warnf "%s" . }} {{ else }} {{ with .Content }} {{ with
 transform.Unmarshal . }}
-<!-- Button to toggle the sidebar on small screens -->
-<div class="d-md-none">
-    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSidebar" aria-expanded="false" aria-controls="collapseSidebar">
-        Toggle Sidebar
-    </button>
+<!-- Fixed Top-Right Dropdown for All Screens -->
+<div class="dropdown products-dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" id="productsDropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+      Jump to {{ "👇" | emojify }}
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="productsDropdownMenuButton">
+      {{ range . }}
+          {{ $split := split .Name " " }}
+          {{ $splitName := index $split 0 }}
+          <li><a class="dropdown-item" href="#{{ .Id }}">{{ $splitName }}</a></li>
+      {{ end }}
+  </ul>
 </div>
-
-<!-- Collapsible sidebar for small screens -->
-<div class="d-md-none collapse" id="collapseSidebar">
-    <nav class="right-sidebar">
-        <ul class="nav flex-column">
-            {{ range . }}
-                <li class="nav-item">
-                    {{ $split := split .Name " " }}
-                    {{ $splitName := index $split 0 }}
-                    <a class="nav-link" href="#{{ .Id }}">{{ $splitName }}</a>
-                </li>
-            {{ end }}
-        </ul>
-    </nav>
-</div>
-
-<!-- Right Sidebar for medium and larger screens -->
-<nav id="rightSidebar" class="d-none d-md-block right-sidebar">
-    <ul class="nav flex-column">
-        {{ range . }}
-            <li class="nav-item">
-                {{ $split := split .Name " " }}
-                {{ $splitName := index $split 0 }}
-                <a class="nav-link" href="#{{ .Id }}">{{ $splitName }}</a>
-            </li>
-        {{ end }}
-    </ul>
-</nav>
 <div class="container">
 <div class="row">
   {{ range . }}

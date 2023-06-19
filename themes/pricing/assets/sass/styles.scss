@@ -47,16 +47,12 @@ body {
     margin-top: 1rem;
     cursor: pointer;
 }
-.right-sidebar {
+/* Fixed top-right dropdown */
+.products-dropdown {
     position: fixed;
-    top: 11;
-    bottom: 11;
-    right: 0;
-    width: 200px;
-    height: 100%;
-    padding: 20px;
-    overflow-y: auto;
-    z-index: 2;
+    top: 100px;
+    right: 10px;
+    z-index: 999;
 }
 @media (max-width: 720px) {
     .lead {

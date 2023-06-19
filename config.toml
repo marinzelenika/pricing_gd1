@@ -83,7 +83,6 @@ draft = "false"
 [params]
     url = "https://purchase-api.dynabic.com/v1.2/productFamily/site-groupdocs?isArchived=&pageNumber=&pageSize=&applyDisplayOrder=true&includeProducts=false"
 
-
 [params.dynamicmenuid]
   en = "groupdocs-en"
   de = "groupdocs-de"
