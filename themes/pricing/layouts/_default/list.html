@@ -176,7 +176,7 @@ transform.Unmarshal . }}
   </div>
   {{ end }}
 </div>
-<p class="mt-4 mb-4">*All prices are in USD</p>
+ <span>{{ i18n "note" .}} <strong>USD</strong> </span>
 {{ end }}{{ end }}{{ end }}{{ end }}
 <h2 class="mt-5">Knowledgebase</h2>
 {{- range first 4 (where .Site.RegularPages "Type" "knowledgebase") -}}
