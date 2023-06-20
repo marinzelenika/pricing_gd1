@@ -16,11 +16,22 @@ html {
 body {
     font-family: "Poppins", sans-serif;
 }
+.breadcrumb{
+    margin-top: 6em;
+}
 .temp-license-btn {
     color: white;
     border-radius: 100px;
     padding: 1rem 3rem;
     font-size: 1rem;
+}
+.nav-item {
+  font-size: 14px;
+  border-radius: 18px;
+  padding: 5px;
+}
+.nav-link{
+  border-radius: 20px !important;
 }
 .help-me-btn {
     width: 300px;
@@ -53,6 +64,9 @@ body {
     top: 200px;
     right: 10px;
     z-index: 999;
+}
+.product-page-link{
+    font-size: 14px;
 }
 @media (max-width: 720px) {
     .lead {

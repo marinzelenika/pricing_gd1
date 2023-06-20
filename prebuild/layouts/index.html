@@ -17,7 +17,7 @@
 {{ if strings.Contains $productName "+" }}
 {{ $productName = replace $productName "+" "p" }}
 {{ end }}
-{{ $product := dict "Id" .Id "Name" .Name "Description" .Description "weight" .DisplayOrder "FamilyId" .FamilyId "LargeImg" .LargeLogoImageSrc | jsonify (dict "prefix" " " "indent" "  ") }}
+{{ $product := dict "Id" .Id "Name" .Name "Description" .Description "weight" .DisplayOrder "FamilyId" .FamilyId "LargeImg" .LargeLogoImageSrc "ProductPageUrl" .CommercialPageUrl | jsonify (dict "prefix" " " "indent" "  ") }}
 
 {{/* 1. */}}{{ $string := $product }}
     {{/* 2. */}} {{ $filename := printf "product/%s.md" (urlize $productName) }} 

@@ -1,5 +1,5 @@
 {{ define "main" }}
-
+{{- partial "header.html" . -}}
 {{ with resources.GetRemote
 "https://purchase-api.dynabic.com/v1.2/productFamily/site-groupdocs?isArchived=&pageNumber=&pageSize=&applyDisplayOrder=true&includeProducts=false"
 }} {{ with .Err }} {{ warnf "%s" . }} {{ else }} {{ with .Content }} {{ with
@@ -23,7 +23,7 @@ transform.Unmarshal . }}
   <div class="col-xxl-3 col-lg-4 col-md-6 col-sm-12 d-flex">
     {{ if eq $q 0 }}
     <div class="card mt-3 mb-3 flex-fill my-special-card" id="{{ .Id }}">
-      <div class="card-flag">Most Popular</div>
+      <div class="card-flag">Most Popular (Bundle)</div>
       {{ else }}
     <div class="card mt-3 mb-3 flex-fill" id="{{ .Id }}">
       {{ end }}
@@ -73,6 +73,17 @@ transform.Unmarshal . }}
         </p>
 
         <div class="dropdown">
+          {{ if eq $q 0 }}
+          <a
+            class="btn btn-secondary suite-toggle dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            {{ i18n "choose-platform" . }}
+          </a>
+          {{ else }}
           <a
             class="btn btn-secondary dropdown-toggle"
             href="#"
@@ -82,7 +93,7 @@ transform.Unmarshal . }}
           >
             {{ i18n "choose-platform" . }}
           </a>
-          
+          {{ end }}
 
           <ul class="dropdown-menu">
             {{ $id := .Id }}
@@ -133,11 +144,16 @@ transform.Unmarshal . }}
         <div class="d-flex justify-content-center">
                     {{ range $.Site.RegularPages }}
             {{ if eq .Params.FamilyId $id }}
-            {{/*  {{ if strings.Contains .Params.Name "Product Family" }}  */}}
+            {{ if eq $q 0 }}
+          <a href="{{ .RelPermalink }}" class="btn btn-primary btn-lg suite-fam-pack-btn fam-pack-btn"
+            ><span style="margin: auto">{{ i18n "select" . }}</span></a
+          >
+          {{ else }}
           <a href="{{ .RelPermalink }}" class="btn btn-primary btn-lg fam-pack-btn"
             ><span style="margin: auto">{{ i18n "select" . }}</span></a
           >
-          {{ end }}{{ end }}{{/*  {{ end }}  */}}
+          {{ end }}
+          {{ end }}{{ end }}
         </div>
         {{ else if eq $i 0 }}
         <span style="font-size: x-small; font-style:italic;">{{ i18n "only-supported" }}</span>

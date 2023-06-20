@@ -1,5 +1,11 @@
 {{ define "main" }}
 <div class="container">
+  {{ partial "breadcrumb" . }}
+  <div class="text-center mt-3">
+   <h3 class="mb-0"><strong>{{ .Params.Name }}</strong></h3>
+    <a href="{{ .Params.ProductPageUrl }}" class="product-page-link">Visit Product Page</a>
+</div>
+
 {{ if not (or (strings.Contains .Params.Name "C++") (strings.Contains .Params.Name "Android via Java") (strings.Contains .Params.Name "Python via .NET") (strings.Contains .Params.Name "Python via Java") (strings.Contains .Params.Name "SharePoint") (strings.Contains .Params.Name "Reporting Services") (strings.Contains .Params.Name "JasperReports") (strings.Contains .Params.Name "PHP via Java") (strings.Contains .Params.Name "Node.js via Java") (strings.Contains .Params.Name "JavaScript via Java") (strings.Contains .Params.Name "ZIP for .NET"))}}
   <div class="m-5">
     <ul class="nav nav-pills menu justify-content-center" id="myTab">
