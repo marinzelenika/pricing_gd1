@@ -19,10 +19,11 @@ transform.Unmarshal . }}
 </div>
 <div class="container">
 <div class="row">
-  {{ range $i, $j := . }}
+  {{ range $q, $p := . }}
   <div class="col-xxl-3 col-lg-4 col-md-6 col-sm-12 d-flex">
-    {{ if eq $i 0 }}
+    {{ if eq $q 0 }}
     <div class="card mt-3 mb-3 flex-fill my-special-card" id="{{ .Id }}">
+      <div class="card-flag">Most Popular</div>
       {{ else }}
     <div class="card mt-3 mb-3 flex-fill" id="{{ .Id }}">
       {{ end }}
@@ -37,20 +38,34 @@ transform.Unmarshal . }}
         />
         {{ $split := split .Name " " }}
         {{ $splitName := index $split 0 }}
+        {{ if eq $q 0 }}
+        <h5 class="card-title suite-text"><strong>{{ $splitName }}</strong></h5>
+        <p class="card-text suite-text">
+            {{ $descc := print "desc-" "" .Name }}
+            {{ i18n $descc . }}
+        </p>
+        <p class="card-text suite-text">
+          {{ i18n "from" . }} 
+        {{ else }}
         <h5 class="card-title"><strong>{{ $splitName }}</strong></h5>
         <p class="card-text">
             {{ $descc := print "desc-" "" .Name }}
             {{ i18n $descc . }}
         </p>
-       
         <p class="card-text">
-          {{ i18n "from" . }} <br />
+          {{ i18n "from" . }} 
+          {{ end }}
+          <br />
             {{ $name := .Name }}
             {{ $dataJ := getJSON "data/products.json" }}
             {{ range $dataJ }}
             {{ range .products }}
             {{ if eq .name $name }}
+            {{ if eq $q 0 }}
+            <strong style="font-size: x-large; color: white">${{ .price }}</strong>
+            {{ else }}
             <strong style="font-size: x-large; color: black">${{ .price }}</strong>
+            {{ end }}
             {{end}}
             {{end}}
             {{end}}
@@ -82,10 +97,15 @@ transform.Unmarshal . }}
           
         </div>
 
+        {{ if eq $q 0 }}
+        <div class="hr-or suite-hr">
+          <span>{{ i18n "or" . }}</span>
+        </div>
+        {{ else }}
         <div class="hr-or">
           <span>{{ i18n "or" . }}</span>
         </div>
-
+        {{ end }}
         
         {{ $url := print
           "https://purchase-api.dynabic.com/v1.2/productFamily/site-groupdocs/name-"
@@ -97,11 +117,19 @@ transform.Unmarshal . }}
         {{ range first 1 .PricingPlans }}
         {{ range .PaymentScheduleList }}
         {{ if strings.Contains $prodName "Family" }}
+        {{if eq $q 0 }}
+        <span style="font-size: xx-small; word-spacing: 0.01px; color: white;"
+          >{{ i18n "getall" .}}
+        </span>
+        <br />
+        <strong style="font-size: x-large; color: white">${{ .SubscriptionPeriodCharge }} </strong>
+        {{ else }}
         <span style="font-size: xx-small; word-spacing: 0.01px; color: gray;"
           >{{ i18n "getall" .}}
         </span>
         <br />
         <strong style="font-size: x-large">${{ .SubscriptionPeriodCharge }} </strong>
+        {{ end }}
         <div class="d-flex justify-content-center">
                     {{ range $.Site.RegularPages }}
             {{ if eq .Params.FamilyId $id }}
