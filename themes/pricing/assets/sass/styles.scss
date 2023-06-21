@@ -68,6 +68,9 @@ body {
 .product-page-link{
     font-size: 14px;
 }
+tr {
+    z-index: 1;
+}
 @media (max-width: 720px) {
     .lead {
         width: 100%;

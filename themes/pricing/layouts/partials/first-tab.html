@@ -104,15 +104,15 @@
     <tbody class="comp-table__tableBody">
       <tr class="comp-table__columnGroup comp-table__tableRow">
         <th scope="colgroup" class="comp-table__tableData" colspan="4">
-          <span>{{ i18n "developers-licensed" . }} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl1` . }}">
-  <span style="margin-left: .5em; color: grey">&#63;</span>
-</span></span>
+          <span>{{ i18n "developers-licensed" . }} <div class="help-tip" style="display: inline-block; z-index: 999; visibility: visible;">
+<p style="z-index: 999;">{{ i18n `expl1` . }}</p>
+</div></span>
         </th>
       </tr>
       <tr class="comp-table__tableRow comp-table__tableBodyRow">
-        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "developers-licensed" . }} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl1` . }}">
-  <span style="margin-left: .5em; color: grey">&#63;</span>
-</span></th>
+        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "developers-licensed" . }} <div class="help-tip" style="display: inline-block; z-index: 999; visibility: visible;">
+<p  style="z-index: 999;">{{ i18n `expl1` . }}</p>
+</div></th>
         <td class="comp-table__tableData comp-table__tableDataCell ">1</td>
         <td class="comp-table__tableData comp-table__tableDataCell ">1</td>
         <td class="comp-table__tableData comp-table__tableDataCell ">10</td>
@@ -479,6 +479,7 @@
     border-spacing:0;
     margin-top: 2.4em;
     margin-bottom: .5em;
+    z-index: 1 !important;
 }
 .comparisonTableContainer{
     overflow:auto
@@ -493,6 +494,7 @@
     max-width:200px!important;
     font-size:1.2rem;
     border-left: 1px solid #bdbdbd;
+    z-index: 1 !important;
 }
 .comp-table Check:before{
     color:#4ac263;
@@ -504,7 +506,8 @@
 }
 .comp-table__tableData{
     border-right:1px solid #bdbdbd;
-    border-top:1px solid #bdbdbd
+    border-top:1px solid #bdbdbd;
+    z-index: 1 !important;
 }
 .comp-table caption{
     position:absolute;
@@ -532,11 +535,13 @@
 [scope="colgroup"] span{
     position:sticky;
     top:0;
-    left:0
+    left:0;
+    z-index: 1 !important;
 }
 .comp-table__columnGroup,.comp-table__columnHeader,.comp-table__tableDataCell{
     text-align:center;
-    background-clip:padding-box!important
+    background-clip:padding-box!important;
+    z-index: 1;
 }
 .comp-table__columnHeader{
     font-weight:700;
@@ -549,7 +554,7 @@
         position:sticky;
         top:0;
         left:0;
-        z-index:9
+        z-index:1
     }
 }
 .comp-table__emptyCell{
@@ -558,7 +563,7 @@
     background:#ffffff;
     position: sticky;
     left: 0;
-    z-index: 99;
+    z-index: 1;
 }
 .comp-table__tableDataCell{
     color:#000000;
@@ -609,7 +614,8 @@
     background:#f0f0f0;
     color:#000000;
     font-weight:700;
-    border-top:4px solid #bdbdbd
+    border-top:4px solid #bdbdbd;
+    z-index: 1;
 }
 .comp-table__buyProduct{
     display:flex;
@@ -694,6 +700,12 @@
     background-size:cover;
     background-repeat:no-repeat;
     margin-bottom:10px
+}
+.comp-table__columnGroup{
+z-index: 1 !important;
+}
+.comp-table__tableBodyRow{
+z-index: 1 !important;
 }
 /*************** Pricing Comparison Table CSS ***************/
 </style>
