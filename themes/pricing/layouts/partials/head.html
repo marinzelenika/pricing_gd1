@@ -11,7 +11,6 @@
     <meta name="dc.relation" content="{{ .Site.BaseURL }}" />
     <meta name="theme-color" content="#0ebcc1">
     <meta name="robots" content="index,follow">
-    <link href="https://cms.admin.containerize.com/templates/aspose/css/tooltip.css" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" type="image/ico" href="//cms.admin.containerize.com/templates/groupdocs/favicon.ico">
     <link rel="stylesheet" href="https://www.aspose.com/css/locale.min.css" />
     {{ if .Page.IsTranslated }} {{- partial "langswitcher.html" . -}} {{ end }} 
@@ -21,7 +20,7 @@
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" media="screen">
     {{ $main := resources.Get "js/index.js" | js.Build $options | resources.Minify | fingerprint -}}
     <script src="{{ $main.RelPermalink }}" integrity="{{ $main.Data.Integrity }}" defer></script>
-
+    {{/*  <link href="https://cms.admin.containerize.com/templates/aspose/css/tooltip.css" rel="stylesheet" type="text/css">  */}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;700&display=swap" rel="stylesheet">

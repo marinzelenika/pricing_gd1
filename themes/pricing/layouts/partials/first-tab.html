@@ -75,7 +75,7 @@
   </div>
 
   <table class="comp-table">
-    <caption>Features</caption>
+    <caption></caption>
     <thead class="comp-table__tableHead">
       <tr class="comp-table__columnHeaders comp-table__tableRow">
         <th title="Empty placeholder cell" class="comp-table__emptyCell comp-table__tableData comp-table__columnHeader"></th>
@@ -104,14 +104,14 @@
     <tbody class="comp-table__tableBody">
       <tr class="comp-table__columnGroup comp-table__tableRow">
         <th scope="colgroup" class="comp-table__tableData" colspan="4">
-          <span>{{ i18n "developers-licensed" . }} <div class="help-tip" style="display: inline-block; z-index: 999; visibility: visible;">
-<p style="z-index: 999;">{{ i18n `expl1` . }}</p>
+          <span>{{ i18n "developers-licensed" . }} <div class="help-tip" style="display: inline-block;">
+<p class="help-expl">{{ i18n `expl1` . }}</p>
 </div></span>
         </th>
       </tr>
       <tr class="comp-table__tableRow comp-table__tableBodyRow">
-        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "developers-licensed" . }} <div class="help-tip" style="display: inline-block; z-index: 999; visibility: visible;">
-<p  style="z-index: 999;">{{ i18n `expl1` . }}</p>
+        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "developers-licensed" . }} <div class="help-tip" style="display: inline-block;">
+<p class="help-expl">{{ i18n `expl1` . }}</p>
 </div></th>
         <td class="comp-table__tableData comp-table__tableDataCell ">1</td>
         <td class="comp-table__tableData comp-table__tableDataCell ">1</td>
@@ -120,15 +120,15 @@
       </tr>
       <tr class="comp-table__columnGroup comp-table__tableRow">
         <th scope="colgroup" class="comp-table__tableData" colspan="4">
-          <span>{{ i18n "derived-work" . }} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl2` . }}">
-  <span style="margin-left: .5em; color: grey">&#63;</span>
-</span></span>
+          <span>{{ i18n "derived-work" . }} <div class="help-tip" style="display: inline-block;">
+<p class="help-expl">{{ i18n `expl2` . }}</p>
+</div></span>
         </th>
       </tr>
       <tr class="comp-table__tableRow comp-table__tableBodyRow">
-        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "derived-work" . }} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl2` . }}">
-  <span style="margin-left: .5em; color: grey">&#63;</span>
-</span></span></th>
+        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "derived-work" . }} <div class="help-tip" style="display: inline-block;">
+<p class="help-expl">{{ i18n `expl2` . }}</p>
+</div></span></th>
         <td class="comp-table__tableData comp-table__tableDataCell ">1</td>
         <td class="comp-table__tableData comp-table__tableDataCell "><svg style="width: 20px; height:12px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 241.1C0 161 65 96 145.1 96c38.5 0 75.4 15.3 102.6 42.5L320 210.7l72.2-72.2C419.5 111.3 456.4 96 494.9 96C575 96 640 161 640 241.1v29.7C640 351 575 416 494.9 416c-38.5 0-75.4-15.3-102.6-42.5L320 301.3l-72.2 72.2C220.5 400.7 183.6 416 145.1 416C65 416 0 351 0 270.9V241.1zM274.7 256l-72.2-72.2c-15.2-15.2-35.9-23.8-57.4-23.8C100.3 160 64 196.3 64 241.1v29.7c0 44.8 36.3 81.1 81.1 81.1c21.5 0 42.2-8.5 57.4-23.8L274.7 256zm90.5 0l72.2 72.2c15.2 15.2 35.9 23.8 57.4 23.8c44.8 0 81.1-36.3 81.1-81.1V241.1c0-44.8-36.3-81.1-81.1-81.1c-21.5 0-42.2 8.5-57.4 23.8L365.3 256z"/></svg></td>
         <td class="comp-table__tableData comp-table__tableDataCell ">10</td>
@@ -416,296 +416,5 @@
 </div>
 
 <style>
-/*************** Pricing Comparison Table CSS ***************/
-/* Customize the font family and table height below */
- .comparisonTableContainer {
-     max-height: 90vh;
-    /* The height property ensures the column headers will be sticky on vertical scroll */
-}
-/* Start: Generated CSS */
- @media (max-width:769px){
-    .comp-table__columnGroup .comp-table__tableData,.comp-table__columnGroupSection .comp-table__tableData,.comp-table__columnHeader:nth-child(2),.comp-table__tableBodyRow .comp-table__tableData:nth-child(2){
-        border-left:1px solid #bdbdbd!important
-    }
-    .comp-table__emptyCell,.comp-table__rowheader{
-        display:none
-    }
-    .comp-table__productImage{
-        height:auto;
-        max-width:100%
-    }
-    .comp-table__columnGroupSection .comp-table__tableData{
-        text-align:center;
-        font-size:1rem!important
-    }
-    .comparisonTableContainer .comp-table__tableData:not([scope="colgroup"]){
-        min-width:80px!important;
-        max-width:80px!important
-    }
-    .comparisonTableContainer.moreThan4 .comp-table__tableData:not([scope="colgroup"]){
-        min-width:90px!important;
-        max-width:90px!important
-    }
-    .comparisonTableContainer.moreThan4 .comp-table__tableData[scope="colgroup"]{
-        text-align:left
-    }
-    .comp-table__productImageContainer{
-        width:80px;
-        height:80px
-    }
-}
-.comparisonTableContainer.moreThan4 .comp-table__tableData[scope="colgroup"] span {
-    padding-left: 10px;
-}
-.comparisonTableContainer.moreThan4 .comp-table__tableData[scope="colgroup"]{
-    padding-left: 0
-}
-@media (max-width:769px) and (min-width:400px){
-    .comp-table__price,.comp-table__productLink,.comp-table__productName,.comp-table__tableData{
-        font-size:1rem!important
-    }
-}
-@media (max-width:400px){
-    .comp-table__price,.comp-table__productLink,.comp-table__productName,.comp-table__tableData{
-        font-size:.9rem!important
-    }
-}
-.comp-table{
-    width:100%;
-    margin:auto;
-    border-bottom:1px solid #bdbdbd;
-    table-layout:auto;
-    border-collapse:separate;
-    border-spacing:0;
-    margin-top: 2.4em;
-    margin-bottom: .5em;
-    z-index: 1 !important;
-}
-.comparisonTableContainer{
-    overflow:auto
-}
-.comparisonTableContainer .comp-table__tableData:not([scope="colgroup"]){
-    min-width:150px;
-    max-width:150px
-}
-.comparisonTableContainer .comp-table__rowheader{
-    width:200px!important;
-    min-width:200px!important;
-    max-width:200px!important;
-    font-size:1.2rem;
-    border-left: 1px solid #bdbdbd;
-    z-index: 1 !important;
-}
-.comp-table Check:before{
-    color:#4ac263;
-    font-size:20px
-}
-.comp-table X:before{
-    color:#808080;
-    font-size:20px
-}
-.comp-table__tableData{
-    border-right:1px solid #bdbdbd;
-    border-top:1px solid #bdbdbd;
-    z-index: 1 !important;
-}
-.comp-table caption{
-    position:absolute;
-    opacity:0;
-    top:auto;
-    width:1px;
-    height:1px;
-    overflow:hidden
-}
-.comp-table__rowheader{
-    /*width:20%;*/
-    text-align:left;
-    padding:10px;
-    font-weight:700;
-    color:#000000;
-    left:0;
-    position:sticky
-}
-.comp-table__tableData{
-    padding:12px 7px;
-    background:#ffffff;
-    border-color:#bdbdbd;
-    line-height:1.4
-}
-[scope="colgroup"] span{
-    position:sticky;
-    top:0;
-    left:0;
-    z-index: 1 !important;
-}
-.comp-table__columnGroup,.comp-table__columnHeader,.comp-table__tableDataCell{
-    text-align:center;
-    background-clip:padding-box!important;
-    z-index: 1;
-}
-.comp-table__columnHeader{
-    font-weight:700;
-    background:#ffffff;
-    padding-top:10px;
-    position:relative
-}
-@media(min-height:450px){
-    .comp-table__columnHeaders{
-        position:sticky;
-        top:0;
-        left:0;
-        z-index:1
-    }
-}
-.comp-table__emptyCell{
-    border-top:1px solid #ffffff;
-    border-left:1px solid #ffffff;
-    background:#ffffff;
-    position: sticky;
-    left: 0;
-    z-index: 1;
-}
-.comp-table__tableDataCell{
-    color:#000000;
-    font-size:1.2rem;
-    padding:12px 3px
-}
-.comp-table__columnHeader:not(.comp-table__recommended) .comp-table__recommendedText{
-    display:none
-}
-.comp-table__recommendedText{
-    background:#4ac263;
-    color:#ffffff;
-    position:absolute;
-    top:0;
-    left:0;
-    font-size:1rem;
-    font-weight:600;
-    width:100%;
-    margin:0;
-    padding:4px 0
-}
-@media (min-width:769px){
-    .comp-table__tableBodyRow:nth-child(2n),.comp-table__tableBodyRow:nth-child(2n) .comp-table__tableData{
-        background:#ffffff
-    }
-    .comp-table__tableBodyRow:nth-child(4n),.comp-table__tableBodyRow:nth-child(4n) .comp-table__tableData{
-        background:#ededed
-    }
-    .comp-table__columnGroup{
-        display:none
-    }
-    .comp-table__productImage{
-        max-width:120px!important;
-        height:auto
-    }
-    .comp-table__rowheader{
-        padding-left:20px!important
-    }
-    .comp-table__columnGroupSection .comp-table__tableData{
-        text-align:left
-    }
-    .comp-table__productImageContainer{
-        width:140px;
-        height:140px
-    }
-}
-.comp-table__columnGroup .comp-table__tableData{
-    background:#f0f0f0;
-    color:#000000;
-    font-weight:700;
-    border-top:4px solid #bdbdbd;
-    z-index: 1;
-}
-.comp-table__buyProduct{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:end;
-    grid-gap:10px;
-    height:auto;
-    position:relative
-}
-.comp-table__productLink:hover{
-    filter:brightness(.9)
-}
-.comp-table__productLink{
-    border:2px solid #000000;
-    background:#ffffff;
-    color:#000000;
-    padding:12px 2px;
-    border-radius:5px;
-    width:95%;
-    font-size:1.1rem;
-    line-height:1.2;
-    pointer-events:all !important
-}
-.comp-table__recommended .comp-table__productLink{
-    border:2px solid transparent;
-    background:#f27e3d;
-    color:#ffffff;
-}
-.comp-table__price{
-    font-size:1.8rem;
-    margin-top:10px;
-    margin-bottom:10px;
-    color:#000000;
-    word-break:break-word;
-    line-height:1.2
-}
-.comp-table__productName{
-    line-height:1.2;
-    color:#000000;
-    /*height:;*/
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:1.2rem
-}
-.comp-table__recurrence{
-    font-weight:600;
-    font-size:1rem;
-    margin-top:-10px;
-    margin-bottom:20px;
-    color:#000000;
-    line-height:1rem
-}
-.comp-table__columnGroupSection .comp-table__tableData{
-    font-size:.9rem;
-    text-transform:uppercase;
-    color:#000000;
-    background:#9fd0d1;
-    padding:15px 5px;
-    border-left:1px solid #bdbdbd
-}
-.comp-table__unicodeSymbolCheck{
-    font-size:22px;
-    font-weight:bold
-}
-.comp-table__unicodeSymbolX{
-    font-size:22px;
-    font-weight:bold
-}
-.comp-table__unicodeSymbolX{
-    color:#808080
-}
-.comp-table__unicodeSymbolCheck{
-    color:#4ac263
-}
-.comp-table__recommended{
-    background:#eafbed!important
-}
-.comp-table__productImageContainer{
-    background-position:center;
-    background-size:cover;
-    background-repeat:no-repeat;
-    margin-bottom:10px
-}
-.comp-table__columnGroup{
-z-index: 1 !important;
-}
-.comp-table__tableBodyRow{
-z-index: 1 !important;
-}
-/*************** Pricing Comparison Table CSS ***************/
+
 </style>
