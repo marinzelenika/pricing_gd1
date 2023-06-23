@@ -128,7 +128,7 @@
       <tr class="comp-table__tableRow comp-table__tableBodyRow">
         <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "derived-work" . }} <div class="help-tip" style="display: inline-block;">
 <p class="help-expl">{{ i18n `expl2` . }}</p>
-</div></span></th>
+</div></th>
         <td class="comp-table__tableData comp-table__tableDataCell ">1</td>
         <td class="comp-table__tableData comp-table__tableDataCell "><svg style="width: 20px; height:12px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 241.1C0 161 65 96 145.1 96c38.5 0 75.4 15.3 102.6 42.5L320 210.7l72.2-72.2C419.5 111.3 456.4 96 494.9 96C575 96 640 161 640 241.1v29.7C640 351 575 416 494.9 416c-38.5 0-75.4-15.3-102.6-42.5L320 301.3l-72.2 72.2C220.5 400.7 183.6 416 145.1 416C65 416 0 351 0 270.9V241.1zM274.7 256l-72.2-72.2c-15.2-15.2-35.9-23.8-57.4-23.8C100.3 160 64 196.3 64 241.1v29.7c0 44.8 36.3 81.1 81.1 81.1c21.5 0 42.2-8.5 57.4-23.8L274.7 256zm90.5 0l72.2 72.2c15.2 15.2 35.9 23.8 57.4 23.8c44.8 0 81.1-36.3 81.1-81.1V241.1c0-44.8-36.3-81.1-81.1-81.1c-21.5 0-42.2 8.5-57.4 23.8L365.3 256z"/></svg></td>
         <td class="comp-table__tableData comp-table__tableDataCell ">10</td>
@@ -137,15 +137,15 @@
       {{ if or (strings.Contains .Params.Name "C++") (strings.Contains .Params.Name "Android via Java") (strings.Contains .Params.Name "Python via .NET") (strings.Contains .Params.Name "Python via Java")}}
       <tr class="comp-table__columnGroup comp-table__tableRow">
         <th scope="colgroup" class="comp-table__tableData" colspan="4">
-          <span>{{ i18n "enterprise-deployment" . }} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl4` . }}">
-  <span style="margin-left: .5em; color: grey">&#63;</span>
-</span></span></span>
+          <span>{{ i18n "enterprise-deployment" . }} <div class="help-tip" style="display: inline-block;">
+<p class="help-expl">{{ i18n `expl4` . }}</p>
+</div></span>
         </th>
       </tr>
       <tr class="comp-table__tableRow comp-table__tableBodyRow">
-        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "enterprise-deployment" . }} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl4` . }}">
-  <span style="margin-left: .5em; color: grey">&#63;</span>
-</span></span></span></th>
+        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "enterprise-deployment" . }} <div class="help-tip" style="display: inline-block;">
+<p class="help-expl">{{ i18n `expl4` . }}</p>
+</div></th>
         <td class="comp-table__tableData comp-table__tableDataCell ">
           <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
         </td>
@@ -162,15 +162,15 @@
       {{ else if or (strings.Contains .Params.Name "SharePoint") (strings.Contains .Params.Name "Reporting Services") (strings.Contains .Params.Name "JasperReports") }}
       <tr class="comp-table__columnGroup comp-table__tableRow">
         <th scope="colgroup" class="comp-table__tableData" colspan="4">
-          <span>{{ i18n "unlimited-servers" . }} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl3` . }}">
-  <span style="margin-left: .5em; color: grey">&#63;</span>
-</span></span></span></span>
+          <span>{{ i18n "unlimited-servers" . }} <div class="help-tip" style="display: inline-block;">
+<p class="help-expl">{{ i18n `expl3` . }}</p>
+</div></span>
         </th>
       </tr>
       <tr class="comp-table__tableRow comp-table__tableBodyRow">
-        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "unlimited-servers" . }} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl3` . }}">
-  <span style="margin-left: .5em; color: grey">&#63;</span>
-</span></span></span></th>
+        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "unlimited-servers" . }} <div class="help-tip" style="display: inline-block;">
+<p class="help-expl">{{ i18n `expl3` . }}</p>
+</div></th>
         <td class="comp-table__tableData comp-table__tableDataCell ">
           <span title="Feature is not included" class="comp-table__unicodeSymbolX">✗</span>
         </td>
@@ -187,15 +187,15 @@
       {{ else }}
       <tr class="comp-table__columnGroup comp-table__tableRow">
         <th scope="colgroup" class="comp-table__tableData" colspan="4">
-          <span>{{ i18n "use-with-web-sites" . }} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl5` . }}">
-  <span style="margin-left: .5em; color: grey">&#63;</span>
-</span></span></span></span>
+          <span>{{ i18n "use-with-web-sites" . }} <div class="help-tip" style="display: inline-block;">
+<p class="help-expl">{{ i18n `expl5` . }}</p>
+</div></span>
         </th>
       </tr>
       <tr class="comp-table__tableRow comp-table__tableBodyRow">
-        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "use-with-web-sites" . }} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl5` . }}">
-  <span style="margin-left: .5em; color: grey">&#63;</span>
-</span></span></span></span></th>
+        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "use-with-web-sites" . }} <div class="help-tip" style="display: inline-block;">
+<p class="help-expl">{{ i18n `expl5` . }}</p>
+</div></span></span></span></th>
         <td class="comp-table__tableData comp-table__tableDataCell ">
           <span title="Feature is not included" class="comp-table__unicodeSymbolX">✗</span>
         </td>
@@ -213,15 +213,15 @@
       {{ if not (or (strings.Contains .Params.Name "SharePoint") (strings.Contains .Params.Name "Reporting Services") (strings.Contains .Params.Name "JasperReports"))}}
       <tr class="comp-table__columnGroup comp-table__tableRow">
         <th scope="colgroup" class="comp-table__tableData" colspan="4">
-          <span>{{ i18n "external-distribution" . }} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl6` . }}">
-  <span style="margin-left: .5em; color: grey">&#63;</span>
-</span></span> 
+          <span>{{ i18n "external-distribution" . }} <div class="help-tip" style="display: inline-block;">
+<p class="help-expl">{{ i18n `expl6` . }}</p>
+</div>
         </th>
       </tr>
       <tr class="comp-table__tableRow comp-table__tableBodyRow">
-        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "external-distribution" . }} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl6` . }}">
-  <span style="margin-left: .5em; color: grey">&#63;</span>
-</span></th>
+        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "external-distribution" . }} <div class="help-tip" style="display: inline-block;">
+<p class="help-expl">{{ i18n `expl6` . }}</p>
+</div></th>
         <td class="comp-table__tableData comp-table__tableDataCell ">
           <span title="Feature is not included" class="comp-table__unicodeSymbolX">✗</span>
         </td>
@@ -238,15 +238,15 @@
       {{ end }}
       <tr class="comp-table__columnGroup comp-table__tableRow">
         <th scope="colgroup" class="comp-table__tableData" colspan="4">
-          <span>{{ i18n "royalty-free" .}} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl7` . }}">
-  <span style="margin-left: .5em; color: grey">&#63;</span>
-</span></span>
+          <span>{{ i18n "royalty-free" .}} <div class="help-tip" style="display: inline-block;">
+<p class="help-expl">{{ i18n `expl7` . }}</p>
+</div></span>
         </th>
       </tr>
       <tr class="comp-table__tableRow comp-table__tableBodyRow">
-        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "royalty-free" .}} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl7` . }}">
-  <span style="margin-left: .5em; color: grey">&#63;</span>
-</span></th>
+        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "royalty-free" .}} <div class="help-tip" style="display: inline-block;">
+<p class="help-expl">{{ i18n `expl7` . }}</p>
+</div></th>
         <td class="comp-table__tableData comp-table__tableDataCell ">
           <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
         </td>
@@ -263,15 +263,15 @@
       {{ if not (or (strings.Contains .Params.Name "C++") (strings.Contains .Params.Name "Android via Java") (strings.Contains .Params.Name "Python via .NET") (strings.Contains .Params.Name "Python via Java") (strings.Contains .Params.Name "SharePoint") (strings.Contains .Params.Name "Reporting Services") (strings.Contains .Params.Name "JasperReports"))}}
       <tr class="comp-table__columnGroup comp-table__tableRow">
         <th scope="colgroup" class="comp-table__tableData" colspan="4">
-          <span>{{ i18n "use-in-a" .}} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl8` . }}">
-  <span style="margin-left: .5em; color: grey">&#63;</span>
-</span></span>
+          <span>{{ i18n "use-in-a" .}} <div class="help-tip" style="display: inline-block;">
+<p class="help-expl">{{ i18n `expl8` . }}</p>
+</div></span>
         </th>
       </tr>
       <tr class="comp-table__tableRow comp-table__tableBodyRow">
-        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "use-in-a" .}}  <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl8` . }}">
-  <span style="margin-left: .5em; color: grey">&#63;</span>
-</span></th>
+        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "use-in-a" .}}  <div class="help-tip" style="display: inline-block;">
+<p class="help-expl">{{ i18n `expl8` . }}</p>
+</div></th>
         <td class="comp-table__tableData comp-table__tableDataCell ">
           <span title="Feature is not included" class="comp-table__unicodeSymbolX">✗</span>
         </td>
@@ -287,25 +287,29 @@
       </tr>
       <tr class="comp-table__columnGroup comp-table__tableRow">
         <th scope="colgroup" class="comp-table__tableData" colspan="4">
-          <span>{{ i18n "license-type" . }} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl9` . }}">
-  <span style="margin-left: .5em; color: grey">&#63;</span></span>
+          <span>{{ i18n "license-type" . }} <div class="help-tip" style="display: inline-block;">
+<p class="help-expl">{{ i18n `expl9` . }}</p>
+</div>
         </th>
       </tr>
       <tr class="comp-table__tableRow comp-table__tableBodyRow">
-        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "license-type" . }} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl9` . }}">
-  <span style="margin-left: .5em; color: grey">&#63;</span></th>
+        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "license-type" . }} <div class="help-tip" style="display: inline-block;">
+<p class="help-expl">{{ i18n `expl9` . }}</p>
+</div></th>
         <td colspan="4" class="comp-table__tableData comp-table__tableDataCell ">{{ i18n "perpetual" . }}</td>
       </tr>
       {{ end }}
       <tr class="comp-table__columnGroup comp-table__tableRow">
         <th scope="colgroup" class="comp-table__tableData" colspan="4">
-          <span>{{ i18n "updates-and-hotfixes" .}} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl10` . }}">
-  <span style="margin-left: .5em; color: grey">&#63;</span></span>
+          <span>{{ i18n "updates-and-hotfixes" .}} <div class="help-tip" style="display: inline-block;">
+<p class="help-expl">{{ i18n `expl10` . }}</p>
+</div>
         </th>
       </tr>
       <tr class="comp-table__tableRow comp-table__tableBodyRow">
-        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "updates-and-hotfixes" .}} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl10` . }}">
-  <span style="margin-left: .5em; color: grey">&#63;</span></th>
+        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "updates-and-hotfixes" .}} <div class="help-tip" style="display: inline-block;">
+<p class="help-expl">{{ i18n `expl10` . }}</p>
+</div></th>
         <td class="comp-table__tableData comp-table__tableDataCell ">
           <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
         </td>
@@ -322,13 +326,15 @@
       {{ if or (strings.Contains .Params.Name "C++") (strings.Contains .Params.Name "Android via Java") (strings.Contains .Params.Name "Python via .NET") (strings.Contains .Params.Name "Python via Java") (strings.Contains .Params.Name "SharePoint") (strings.Contains .Params.Name "Reporting Services") (strings.Contains .Params.Name "JasperReports")}}
       <tr class="comp-table__columnGroup comp-table__tableRow">
         <th scope="colgroup" class="comp-table__tableData" colspan="4">
-          <span>{{ i18n "can-be-used" .}} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl11` . }}">
-  <span style="margin-left: .5em; color: grey">&#63;</span></span>
+          <span>{{ i18n "can-be-used" .}} <div class="help-tip" style="display: inline-block;">
+<p class="help-expl">{{ i18n `expl11` . }}</p>
+</div>
         </th>
       </tr>
       <tr class="comp-table__tableRow comp-table__tableBodyRow">
-        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "can-be-used" .}} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl11` . }}">
-  <span style="margin-left: .5em; color: grey">&#63;</span></th>
+        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "can-be-used" .}} <div class="help-tip" style="display: inline-block;">
+<p class="help-expl">{{ i18n `expl11` . }}</p>
+</div></th>
         <td class="comp-table__tableData comp-table__tableDataCell ">
           <span title="Feature is not included" class="comp-table__unicodeSymbolX">✗</span>
         </td>
@@ -345,13 +351,15 @@
       {{ else }}
       <tr class="comp-table__columnGroup comp-table__tableRow">
         <th scope="colgroup" class="comp-table__tableData" colspan="4">
-          <span>{{ i18n "can-be-used" . }} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl12` .}}">
-  <span style="margin-left: .5em; color: grey">&#63;</span></span></span>
+          <span>{{ i18n "can-be-used" . }} <div class="help-tip" style="display: inline-block;">
+<p class="help-expl">{{ i18n `expl12` . }}</p>
+</div></span>
         </th>
       </tr>
       <tr class="comp-table__tableRow comp-table__tableBodyRow">
-        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "can-be-used" .}} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl12` .}}">
-  <span style="margin-left: .5em; color: grey">&#63;</span></span></th>
+        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "can-be-used" .}} <div class="help-tip" style="display: inline-block;">
+<p class="help-expl">{{ i18n `expl12` . }}</p>
+</div></th>
         <td class="comp-table__tableData comp-table__tableDataCell ">
           <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
         </td>
@@ -368,13 +376,15 @@
       {{ end }}
       <tr class="comp-table__columnGroup comp-table__tableRow">
         <th scope="colgroup" class="comp-table__tableData" colspan="4">
-          <span>{{ i18n "discount-applied" .}} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl13` .}}">
-  <span style="margin-left: .5em; color: grey">&#63;</span></span></span>
+          <span>{{ i18n "discount-applied" .}} <div class="help-tip" style="display: inline-block;">
+<p class="help-expl">{{ i18n `expl13` . }}</p>
+</div></span>
         </th>
       </tr>
       <tr class="comp-table__tableRow comp-table__tableBodyRow">
-        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "discount-applied" . }}<span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl13` .}}">
-  <span style="margin-left: .5em; color: grey">&#63;</span></span></th>
+        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "discount-applied" . }}<div class="help-tip" style="display: inline-block;">
+<p class="help-expl">{{ i18n `expl13` . }}</p>
+</div></th>
         <td class="comp-table__tableData comp-table__tableDataCell ">
           <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
         </td>
@@ -390,13 +400,15 @@
       </tr>
       <tr class="comp-table__columnGroup comp-table__tableRow">
         <th scope="colgroup" class="comp-table__tableData" colspan="4">
-          <span>{{ i18n "technical-support" .}} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl14` . }}">
-  <span style="margin-left: .5em; color: grey">&#63;</span></span></span>
+          <span>{{ i18n "technical-support" .}} <div class="help-tip" style="display: inline-block;">
+<p class="help-expl">{{ i18n `expl14` . }}</p>
+</div>></span>
         </th>
       </tr>
       <tr class="comp-table__tableRow comp-table__tableBodyRow">
-        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "technical-support" .}} <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="{{ i18n `expl14` . }}">
-  <span style="margin-left: .5em; color: grey">&#63;</span></span></th>
+        <th class="comp-table__tableData comp-table__rowheader" scope="row">{{ i18n "technical-support" .}} <div class="help-tip" style="display: inline-block;">
+<p class="help-expl">{{ i18n `expl14` . }}</p>
+</div></th>
         <td class="comp-table__tableData comp-table__tableDataCell ">
           <span title="Feature is included" class="comp-table__unicodeSymbolCheck">✓</span>
         </td>

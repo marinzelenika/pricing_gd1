@@ -68,12 +68,9 @@ body {
 .product-page-link{
     font-size: 14px;
 }
-tr {
-    z-index: 1;
-}
 .help-expl{
 z-index: 9999 !important;
-//position:fixed;
+position:fixed !important;
 }
 @media (max-width: 720px) {
     .lead {
@@ -135,7 +132,7 @@ hr {
 }
 
 .help-tip{
-	position: relative;
+	//position: relative;
 	top: 0px;
 	right: -10px;
 	text-align: center;
@@ -157,16 +154,14 @@ hr {
 
 .help-tip:hover p{
 	display:block;
-	//transform-origin: 100% 0%;
-
+	transform-origin: 100% 0%;
 	-webkit-animation: fadeIn 0.3s ease-in-out;
 	animation: fadeIn 0.3s ease-in-out;
-
 }
 
 .help-tip p{
 	display: none;
-      left:-10px;
+    left:-10px;
 	text-align: left;
 	background-color: #1E2021;
 	padding: 20px;
@@ -178,7 +173,7 @@ hr {
 	color: #FFF;
 	font-size: 13px;
 	line-height: 1.4;
-    z-index: 99 !important;
+    z-index: 9999 !important;
 }
 
 .help-tip p:before{
