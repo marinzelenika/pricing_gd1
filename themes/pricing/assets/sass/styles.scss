@@ -132,12 +132,12 @@ hr {
 }
 
 .help-tip{
-	//position: relative;
+	//position: absolute !important;
 	top: 0px;
 	right: -10px;
 	text-align: center;
-	background-color: #BCDBEA;
-    z-index:990;
+	background-color: $primary;
+    z-index:9 !important;
 	border-radius: 50%;
 	width: 16px;
 	height: 16px;
@@ -154,6 +154,7 @@ hr {
 
 .help-tip:hover p{
 	display:block;
+    z-index: 999 !important;
 	transform-origin: 100% 0%;
 	-webkit-animation: fadeIn 0.3s ease-in-out;
 	animation: fadeIn 0.3s ease-in-out;
@@ -166,14 +167,14 @@ hr {
 	background-color: #1E2021;
 	padding: 20px;
 	width: 300px;
-	position: sticky;
+	position: absolute !important;
 	border-radius: 3px;
 	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 	right: -4px;
 	color: #FFF;
 	font-size: 13px;
 	line-height: 1.4;
-    z-index: 9999 !important;
+    z-index: 999999 !important;
 }
 
 .help-tip p:before{
