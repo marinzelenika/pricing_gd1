@@ -132,9 +132,9 @@ hr {
 }
 
 .help-tip{
-	//position: absolute !important;
+	//position: relative !important;
 	top: 0px;
-	right: -10px;
+	//right: -10px;
 	text-align: center;
 	background-color: $primary;
     z-index:9 !important;
@@ -335,7 +335,7 @@ hr {
     z-index: 1 !important;
 }
 [scope="colgroup"] span{
-    position:sticky;
+    position:inherit !important;
     top:0;
     left:0;
     z-index: 1 !important;
@@ -356,10 +356,6 @@ hr {
 .help-expl{
     position: absolute !important;
     z-index: 999 !important;
-}
-.help-tip{
-    position: relative  !important;
-    z-index: 11 !important;
 }
 @media(min-height:450px){
     .comp-table__columnHeaders{
