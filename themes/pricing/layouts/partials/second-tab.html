@@ -23,14 +23,12 @@
           {{ i18n "simulator" .}}</a><br>
           {{ range .PaymentScheduleList }}
           {{ i18n "from" . }}
-          <h3 style="margin: 0">${{ .SubscriptionPeriodCharge }}/{{ i18n "month" . }}</h3>
+          <h2 class="display-4" style="margin: 12px 0">${{ .SubscriptionPeriodCharge }}<sub style="font-size: 30%; vertical-align: baseline;">/{{ i18n "month" . }}</sub></h2>
           {{ end }}
           <p style="font-size: small"><a href="https://forum.groupdocs.com">{{ i18n "with-free-support" . }}</a></p>
           {{ $linkUrl := print "https://purchase.groupdocs.com/buy/cart?ppId=" ""
           $ppId }}
-          <a class="btn btn-primary btn-lg fam-pack-btn1 d-flex justify-content-center align-items-center" href="{{ $linkUrl }}" target="_blank"
-            ><span style="margin: auto">{{ i18n "select-only" . }}</span></a
-          >
+          
           <hr />
           {{ range .PaymentScheduleList }} {{ $SubCharges :=
           .SubscriptionPeriodCharge }}
@@ -43,7 +41,7 @@
         {{ if eq $name .Name }}
         {{ range .PaymentScheduleList }}
         {{ if not (eq (int .Id) 94688)}}
-        {{ i18n "from" . }}
+        {{/*  {{ i18n "from" . }}
         <h3 style="margin: 0;">${{ $SubCharges }}/{{ i18n "month" . }}</h3>
         <p style="margin: 0; color: green; font-size:medium">+{{ .SubscriptionPeriodCharge }}/{{ i18n "year" . }} </p>
         <p style="font-size: small;"><a href="https://helpdesk.groupdocs.com">{{ i18n "with-paid-support" . }}</a></p>
@@ -51,11 +49,18 @@
           $ppId "&paidSupport=true" }}
         <a class="btn btn-primary btn-lg fam-pack-btn1 d-flex justify-content-center align-items-center" href="{{ $linkUrlwPaidSupport }}" target="_blank"
             ><span style="margin: auto">{{ i18n "select-only" . }}</span></a
-          >
+          >  */}}
+          <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="checkSupport" data-pp-id="{{ $ppId }}" data-baseprice="{{ $SubCharges }}" data-support-price="{{ .SubscriptionPeriodCharge }}">
+  <label class="form-check-label" for="checkSupport">
+    Add Paid Support
+  </label>
+</div>
           <hr />
+          
         {{ end }}{{ end }}{{ end }}{{ end }}{{ end }}{{ end }}{{ end }}
     {{ end }}{{ end }}{{ end }}
-    {{ i18n "from" . }}
+    {{/*  {{ i18n "from" . }}
     <h3 style="margin: 0;">${{ .SubscriptionPeriodCharge }}/{{ i18n "month" . }}</h3>
     <div class="wrapper">
     <p style="color: green; font-size: large; margin: 0;">+$5999</p>
@@ -66,9 +71,18 @@
           $ppId "&paidConsulting=true" }}
         <a class="btn btn-primary btn-lg fam-pack-btn1 d-flex justify-content-center align-items-center" href="{{ $linkUrlwPaidConsulting }}" target="_blank"
             ><span style="margin: auto">{{ i18n "select-only" . }}</span></a
+          >  */}}
+    <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="checkConsulting" data-pp-id="{{ $ppId }}" data-baseprice="{{ $SubCharges }}" data-support-price="5999">
+  <label class="form-check-label" for="checkConsulting">
+    Add Paid Consulting
+  </label>
+</div> 
+<a class="btn btn-primary btn-lg fam-pack-btn1 d-flex justify-content-center align-items-center" href="{{ $linkUrl }}" target="_blank" id="myLink"
+            ><span style="margin: auto">{{ i18n "select-only" . }}</span></a
           >
-
-    {{ end }}
+    {{ end }}  
+     
         </div>
       </div>
       </div>

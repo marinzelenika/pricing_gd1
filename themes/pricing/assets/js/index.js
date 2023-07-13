@@ -42,3 +42,39 @@ if (window.innerWidth < 400) {
   }
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+  var checkSupport = document.getElementById("checkSupport");
+  var checkConsulting = document.getElementById("checkConsulting");
+
+  // Assuming you have a link with the id 'myLink'
+  var link = document.getElementById("myLink");
+
+  function updateLinkHref() {
+    var baseHref = "https://purchase.groupdocs.com/buy/cart?ppId=";
+    var ppId = checkSupport.getAttribute("data-pp-id"); // assuming ppId is same for both
+
+    baseHref += ppId;
+
+    if (checkSupport.checked) {
+      baseHref += "&paidSupport=true";
+    }
+
+    // If you need to add any other parameters based on the checkConsulting checkbox, add them here
+
+    link.href = baseHref;
+  }
+
+  checkSupport.addEventListener("change", function () {
+    updateLinkHref();
+  });
+
+  checkConsulting.addEventListener("change", function () {
+    updateLinkHref();
+  });
+
+  // Call updateLinkHref() to set the initial href
+  updateLinkHref();
+});
+
+
+
