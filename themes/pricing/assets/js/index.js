@@ -59,6 +59,10 @@ document.addEventListener("DOMContentLoaded", function () {
       baseHref += "&paidSupport=true";
     }
 
+    if (checkConsulting.checked) {
+      baseHref += "&paidConsulting=true";
+    }
+
     // If you need to add any other parameters based on the checkConsulting checkbox, add them here
 
     link.href = baseHref;

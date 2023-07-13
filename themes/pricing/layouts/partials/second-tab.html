@@ -57,7 +57,12 @@
   </label>
 </div>
           <hr />
-          
+          <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="checkConsulting" data-pp-id="{{ $ppId }}" data-baseprice="{{ $SubCharges }}" data-support-price="5999">
+  <label class="form-check-label" for="checkConsulting">
+    Add Paid Consulting
+  </label>
+</div> 
         {{ end }}{{ end }}{{ end }}{{ end }}{{ end }}{{ end }}{{ end }}
     {{ end }}{{ end }}{{ end }}
     {{/*  {{ i18n "from" . }}
@@ -72,12 +77,7 @@
         <a class="btn btn-primary btn-lg fam-pack-btn1 d-flex justify-content-center align-items-center" href="{{ $linkUrlwPaidConsulting }}" target="_blank"
             ><span style="margin: auto">{{ i18n "select-only" . }}</span></a
           >  */}}
-    <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="checkConsulting" data-pp-id="{{ $ppId }}" data-baseprice="{{ $SubCharges }}" data-support-price="5999">
-  <label class="form-check-label" for="checkConsulting">
-    Add Paid Consulting
-  </label>
-</div> 
+    
 <a class="btn btn-primary btn-lg fam-pack-btn1 d-flex justify-content-center align-items-center" href="{{ $linkUrl }}" target="_blank" id="myLink"
             ><span style="margin: auto">{{ i18n "select-only" . }}</span></a
           >
