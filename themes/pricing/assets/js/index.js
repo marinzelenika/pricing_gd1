@@ -43,42 +43,59 @@ if (window.innerWidth < 400) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  var checkSupport = document.getElementById("checkSupport");
-  var checkConsulting = document.getElementById("checkConsulting");
+  var supportCheckboxes = document.querySelectorAll("[id^='checkSupport_']");
+  var consultingCheckboxes = document.querySelectorAll(
+    "[id^='checkConsulting_']"
+  );
 
-  // Assuming you have a link with the id 'myLink'
-  var link = document.getElementById("myLink");
+  function updateLinkHref(ppId) {
+    var supportCheckbox = document.getElementById("checkSupport_" + ppId);
+    var consultingCheckbox = document.getElementById("checkConsulting_" + ppId);
+    var basePrice = parseFloat(supportCheckbox.getAttribute("data-base-price"));
+    var supportPrice = parseFloat(
+      supportCheckbox.getAttribute("data-support-price")
+    );
+    var link = document.getElementById("myLink_" + ppId);
+    var totalPriceElement = document.getElementById("totalPrice_" + ppId);
+    var baseHref = "https://purchase.groupdocs.com/buy/cart?ppId=" + ppId;
 
-  function updateLinkHref() {
-    var baseHref = "https://purchase.groupdocs.com/buy/cart?ppId=";
-    var ppId = checkSupport.getAttribute("data-pp-id"); // assuming ppId is same for both
+    var totalPrice = basePrice;
 
-    baseHref += ppId;
-
-    if (checkSupport.checked) {
+    if (supportCheckbox.checked) {
       baseHref += "&paidSupport=true";
+      totalPrice += supportPrice;
     }
 
-    if (checkConsulting.checked) {
+    if (consultingCheckbox.checked) {
       baseHref += "&paidConsulting=true";
+      totalPrice += 5999;
     }
-
-    // If you need to add any other parameters based on the checkConsulting checkbox, add them here
 
     link.href = baseHref;
+    totalPriceElement.innerText = totalPrice.toFixed(2); // Display the price with 2 decimal places
   }
 
-  checkSupport.addEventListener("change", function () {
-    updateLinkHref();
+  supportCheckboxes.forEach(function (checkbox) {
+    checkbox.addEventListener("change", function () {
+      updateLinkHref(checkbox.getAttribute("data-pp-id"));
+    });
+
+    // Call updateLinkHref() to set the initial href and price
+    updateLinkHref(checkbox.getAttribute("data-pp-id"));
   });
 
-  checkConsulting.addEventListener("change", function () {
-    updateLinkHref();
-  });
+  consultingCheckboxes.forEach(function (checkbox) {
+    checkbox.addEventListener("change", function () {
+      updateLinkHref(checkbox.getAttribute("data-pp-id"));
+    });
 
-  // Call updateLinkHref() to set the initial href
-  updateLinkHref();
+    // Call updateLinkHref() to set the initial href and price
+    updateLinkHref(checkbox.getAttribute("data-pp-id"));
+  });
 });
+
+
+
 
 
 
