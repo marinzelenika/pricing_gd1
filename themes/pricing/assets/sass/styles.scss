@@ -68,6 +68,20 @@ body {
 .product-page-link{
     font-size: 14px;
 }
+.form-check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-check-input {
+    position: relative;
+    flex: 0 0 auto;
+    margin-top: 0;
+    margin-right: 0.5rem;
+    margin-left: 0;
+}
+
 @media (max-width: 720px) {
     .lead {
         width: 100%;

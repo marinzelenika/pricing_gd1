@@ -57,6 +57,15 @@
     "choose-platform": {
       "other": "Choose a platform"
     },
+    "add": {
+      "other": "Add"
+    },
+    "paid-support": {
+      "other": "Paid Support"
+    },
+    "paid-consulting": {
+      "other": "Paid Consulting"
+    },
     "or": {
       "other": "or"
     },
