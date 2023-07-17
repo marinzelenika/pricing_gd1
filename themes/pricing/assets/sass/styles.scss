@@ -81,7 +81,9 @@ body {
     margin-right: 0.5rem;
     margin-left: 0;
 }
-
+.form-check-input[type=checkbox] {
+    border: 1px solid !important;
+}
 @media (max-width: 720px) {
     .lead {
         width: 100%;
@@ -138,7 +140,7 @@ body {
 }
 
 hr {
-    border-top: 0;
+    border-top: 1px solid gray;
 }
 
 .help-tip{

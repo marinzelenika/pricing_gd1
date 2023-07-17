@@ -60,11 +60,17 @@
     "add": {
       "other": "Add"
     },
+    "see-more": {
+      "other": "See more"
+    },
+    "paid-support-note": {
+      "other": "Paid Support subscription is purchased as a separate product and is not a part of product license."
+    },
     "paid-support": {
-      "other": "Paid Support"
+      "other": "Add Paid Support"
     },
     "paid-consulting": {
-      "other": "Paid Consulting"
+      "other": "Add Paid Consulting"
     },
     "or": {
       "other": "or"
