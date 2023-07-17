@@ -1,4 +1,4 @@
-baseURL = 'pricing-gd1.netlify.app'
+baseURL = 'https://purchase-qa.groupdocs.com/pricing.groupdocs/'
 languageCode = 'en-us'
 title = 'Pricing information | groupdocs.com'
 theme = 'pricing'
