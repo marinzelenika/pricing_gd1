@@ -138,6 +138,11 @@ body {
     width: 400px !important;
   }
 }
+.parent-flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 hr {
     border-top: 1px solid gray;

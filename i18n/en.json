@@ -66,6 +66,9 @@
     "paid-support-note": {
       "other": "Paid Support subscription is purchased as a separate product and is not a part of product license."
     },
+    "paid-consulting-note": {
+      "other": "GroupDocs Paid Consulting is an efficient and safe way to outsource your software project and get your business to the next level."
+    },
     "paid-support": {
       "other": "Add Paid Support"
     },
