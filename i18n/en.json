@@ -45,6 +45,24 @@
     "desc-GroupDocs.Classification Product Family": {
       "other": "Programmatically classify documents and text into accurate categories using IAB (version 2) and documents taxonomies within any type of .NET applications."
     },
+    "note-Developer Small Business": {
+      "other": "1 Developer And 1 Deployment Location"
+    },
+    "note-Developer OEM": {
+      "other": "1 Developer And Unlimited Deployment Locations"
+    },
+    "note-Site Small Business": {
+      "other": "Up To 10 Developers And Up To 10 Deployment Locations"
+    },
+    "note-Site OEM": {
+      "other": "Up To 10 Developers And Unlimited Deployment Locations"
+    },
+    "note-Metered Small Business": {
+      "other": "Unlimited Developers And Pay As You Use"
+    },
+    "note-Metered OEM": {
+      "other": "Unlimited Developers And Pay As You Use"
+    },
     "only-supported": {
       "other": "This product is currently only supported for the .NET platform and therefore no family pack is available."
     },
@@ -96,8 +114,23 @@
     "pricing": {
       "other": "Pricing"
     },
+    "visit-product-page": {
+      "other": "Visit Product Page"
+    },
     "home-description": {
       "other": "Enhance your web, mobile, or desktop apps with the capability to display, annotate, convert, e-sign, compare and assemble documents."
+    },
+    "jump-to": {
+      "other": "Jump to"
+    },
+    "most-popular": {
+      "other": "Most Popular (Bundle)"
+    },
+    "knowledgebase": {
+      "other": "Knowledgebase"
+    },
+    "read-more": {
+      "other": "Read more..."
     },
     "estimate": {
       "other": "You can estimate monthly costs using our"

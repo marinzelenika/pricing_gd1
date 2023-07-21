@@ -7,7 +7,7 @@ transform.Unmarshal . }}
 <!-- Fixed Top-Right Dropdown for All Screens -->
 <div class="dropdown products-dropdown">
   <button class="btn btn-primary dropdown-toggle" type="button" id="productsDropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-      Jump to {{ "👇" | emojify }}
+      {{ i18n "jump-to" . }} {{ "👇" | emojify }}
   </button>
   <ul class="dropdown-menu" aria-labelledby="productsDropdownMenuButton">
       {{ range . }}
@@ -178,7 +178,7 @@ transform.Unmarshal . }}
 </div>
  <span>{{ i18n "note" .}} <strong>USD</strong> </span>
 {{ end }}{{ end }}{{ end }}{{ end }}
-<h2 class="mt-5">Knowledgebase</h2>
+<h2 class="mt-5">{{ i18n "knowledgebase" .}}</h2>
 {{- range first 4 (where .Site.RegularPages "Type" "knowledgebase") -}}
 <div class="card border-primary mb-3 article-card" onclick="window.location='{{ .RelPermalink }}';">
   <div class="card-body text-primary">
@@ -189,7 +189,7 @@ transform.Unmarshal . }}
 {{ end }}
 <div class="text-center">
 <a href="{{ .Site.BaseURL }}knowledgebase" class="btn btn-primary read-more">
-    Read more...
+    {{ i18n "read-more" . }}
 </a>
   <hr style="margin-bottom: 15px; color:black">
   </div>

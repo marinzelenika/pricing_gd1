@@ -15,9 +15,8 @@
         <div class="card text-center" style="margin:0 auto; height:620px; margin-bottom:2em;">
         <div class="card-body">
           <h5 class="card-title"><strong>{{ $name }}</strong></h5>
-          {{ if eq $.Site.LanguageCode "en" }}
-          <p style="font-size: x-small; color: grey;" class="license-note">{{ .LicenseNote }}</p>
-          {{ end }}
+          {{ $note := print "note-" "" $name }}
+          <p style="font-size: x-small; color: grey;" class="license-note">{{ i18n $note . }}</p>
           {{ i18n "estimate" . }}
           <a href="{{ $.Site.BaseURL | relLangURL }}/metered-pricing/{{ $name | urlize }}">
           {{ i18n "simulator" .}}</a><br>

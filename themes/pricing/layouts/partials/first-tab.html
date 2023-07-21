@@ -16,9 +16,9 @@
       <div class="card text-center product-card">
         <div class="card-body">
           <h5 class="card-title"><strong>{{ index $onlyName 0 }}</strong></h5>
-          {{ if eq $.Site.LanguageCode "en" }}
-          <p style="font-size: x-small; color: grey;" class="license-note">{{ .LicenseNote }}</p>
-          {{ end }}
+          {{ $namee := index $onlyName 0 }}
+          {{ $note := print "note-" "" $namee }}
+          <p style="font-size: x-small; color: grey;" class="license-note">{{ i18n $note . }}</p>
           {{ range .PaymentScheduleList }}
           <h3 class="display-5" style="margin-bottom: 3px">${{ .SubscriptionPeriodCharge }}</h3>
           {{ end }}
