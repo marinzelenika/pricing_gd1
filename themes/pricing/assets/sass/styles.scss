@@ -133,10 +133,21 @@ body {
     .kb-lead {
         padding: .3rem 0 !important;
     }
+    .expl-supp{
+    transform: translateX(-15em) !important;
+  }
+}
+@media screen and (min-width: 700px) and (max-width: 1280px) {
+    .expl-supp{
+    transform: translateX(-14em) !important;
+  }
 }
 @media screen and (min-width: 700px) and (max-width: 1280px) {
   .temp-license-btn{
     width: 400px !important;
+  }
+  .expl-supp{
+    transform: translateX(-15em) !important;
   }
 }
 .parent-flex-container {
@@ -180,7 +191,7 @@ hr {
 
 .help-tip p{
 	display: none;
-    left:18px;
+    left:18px !important;
 	text-align: left;
 	background-color: #1E2021;
 	padding: 20px;
@@ -188,13 +199,12 @@ hr {
 	position: absolute !important;
 	border-radius: 3px;
 	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-	right: 4px;
+	//right: 4px;
 	color: #FFF;
 	font-size: 13px;
 	line-height: 1.4;
     z-index: 999999 !important;
 }
-
 .help-tip p:before{
 	position: absolute;
 	content: '';
