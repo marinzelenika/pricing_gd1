@@ -16,13 +16,15 @@
         <div class="card-body">
           <h5 class="card-title"><strong>{{ $name }}</strong></h5>
           {{ $note := print "note-" "" $name }}
-          <p style="font-size: x-small; color: grey;" class="license-note">{{ i18n $note . }}</p>
+          <p style="font-size: x-small; color: grey;" class="license-note">{{ i18n $note . }}. <a href="https://purchase.groupdocs.com/policies/license-types/" target="_blank">{{ i18n "learn-more" . }}</a></p>
           {{ i18n "estimate" . }}
           <a href="{{ $.Site.BaseURL | relLangURL }}/metered-pricing/{{ $name | urlize }}">
           {{ i18n "simulator" .}}</a><br>
           {{ range .PaymentScheduleList }}
+          <div class="reduced-spacing">
           {{ i18n "from" . }}
-          <h2 class="display-4" style="margin: 12px 0">${{ .SubscriptionPeriodCharge }}<sub style="font-size: 30%; vertical-align: baseline;">/{{ i18n "month" . }}</sub></h2>
+          <h2 class="display-4" style="margin-top: 0">${{ .SubscriptionPeriodCharge }}<sub style="font-size: 30%; vertical-align: baseline;">/{{ i18n "month" . }}</sub></h2>
+        </div>
           {{ end }}
           <p style="font-size: small"><a href="https://forum.groupdocs.com">{{ i18n "with-free-support" . }}</a></p>
           {{ $linkUrl := print "https://purchase.groupdocs.com/buy/cart?ppId=" ""

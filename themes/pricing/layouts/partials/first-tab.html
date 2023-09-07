@@ -18,7 +18,7 @@
           <h5 class="card-title"><strong>{{ index $onlyName 0 }}</strong></h5>
           {{ $namee := index $onlyName 0 }}
           {{ $note := print "note-" "" $namee }}
-          <p style="font-size: x-small; color: grey;" class="license-note">{{ i18n $note . }}</p>
+          <p style="font-size: x-small; color: grey;" class="license-note">{{ i18n $note . }}. <a href="https://purchase.groupdocs.com/policies/license-types/" target="_blank">{{ i18n "learn-more" . }}</a></p>
           {{ range .PaymentScheduleList }}
           <h3 class="display-5" style="margin-bottom: 3px">${{ .SubscriptionPeriodCharge }}</h3>
           {{ end }}
@@ -41,13 +41,6 @@
         {{ if eq $name .Name }}
         {{ range .PaymentScheduleList }}
         {{ if not (eq (int .Id) 94671)}}
-       {{/* <h3 style="margin: 0;">${{ add $SubCharges .SubscriptionPeriodCharge }}</h3>
-        <p style="font-size: small;"><a href="https://helpdesk.groupdocs.com">{{ i18n "with-paid-support" . }}</a></p>
-        {{ $linkUrlwPaidSupport := print "https://purchase.groupdocs.com/buy/cart?ppId=" ""
-          $ppId "&paidSupport=true" }}
-        <a class="btn btn-primary btn-lg fam-pack-btn1 add-to-cart d-flex justify-content-center align-items-center" href="{{ $linkUrlwPaidSupport }}" target="_blank"
-            ><span>{{ i18n "select-only" . }}</span></a
-          >  */}}
           <div class="parent-flex-container">
           <div class="form-check">
   <input class="form-check-input" type="checkbox" value="" id="checkSupport_{{ $ppId }}" value="" data-pp-id="{{ $ppId }}" data-base-price="{{ $SubCharges }}" data-support-price="{{ .SubscriptionPeriodCharge }}">

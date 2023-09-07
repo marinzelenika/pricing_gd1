@@ -22,12 +22,12 @@ transform.Unmarshal . }}
   {{ range $q, $p := . }}
   <div class="col-xxl-3 col-lg-4 col-md-6 col-sm-12 d-flex">
     {{ if eq $q 0 }}
-    <div class="card mt-3 mb-3 flex-fill my-special-card" id="{{ .Id }}">
+    <div class="card mt-3 mb-3 flex-fill my-special-card list-card" id="{{ .Id }}">
       <div class="card-flag">Most Popular (Bundle)</div>
       {{ else }}
-    <div class="card mt-3 mb-3 flex-fill" id="{{ .Id }}">
+    <div class="card mt-3 mb-3 flex-fill list-card" id="{{ .Id }}">
       {{ end }}
-      <div class="card-body">
+      <div class="card-body list-card-body">
         {{ $imgUrl := substr .SmallLogoImageSrc 2 }}
         <img
           class="product-icon"
